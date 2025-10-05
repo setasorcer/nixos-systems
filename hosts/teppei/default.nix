@@ -113,6 +113,12 @@ UNCORE: 0
 ANALOGIO: 0
   ";
 
+  home-manager.users."${username}" = {
+      programs.niri.settings.outputs."eDP-1".scale = 1;
+      programs.niri.settings.outputs."eDP-2".scale = 1;
+  };
+
+
   games.steam.enabled = true;
   virtualization.enabled = true;
 }
