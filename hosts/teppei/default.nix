@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ username, inputs, pkgs, ... }:
+{ username, inputs, lib, ... }:
 
 {
   imports =
@@ -114,8 +114,8 @@ ANALOGIO: 0
   ";
 
   home-manager.users."${username}" = {
-      programs.niri.settings.outputs."eDP-1".scale = 1;
-      programs.niri.settings.outputs."eDP-2".scale = 1;
+      programs.niri.settings.outputs."eDP-1".scale = lib.mkForce 1;
+      programs.niri.settings.outputs."eDP-2".scale = lib.mkForce 1;
   };
 
 
