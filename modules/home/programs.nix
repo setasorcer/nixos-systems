@@ -18,6 +18,7 @@
     gnumake
     libgcc
     qmk
+    sops
 
     # Gaming tools
     nvtopPackages.amd
