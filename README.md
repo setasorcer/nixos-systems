@@ -14,11 +14,13 @@ My personal NixOS deployment for my workstation, server, school laptop, and futu
 
 Along with a bunch of other programs!
 
-`
+```
 feishin (subsonic/jellyfin music player)
 zen-beta (web browser)
 pass (password manager)
-`
+swayimg (image viewer)
+yazi (file manager)
+```
 
 Itsuku is used on my main workstation computers (A Framework 16 and ThinkPad T480). This is made with integration to my server in mind. I used to use mpd for my music player, and good old mpv for watching Linux ISOs.
 
@@ -37,11 +39,9 @@ Miyazu is used on my main home server. Currently I'm just learning the hoops of 
 
 ## Rebuilding
 
-To rebuild with the host you want, use this command followed by the host you want. In miyazu's case, it would be:
+To rebuild with the host you want, use this command followed by the host you want. In miyazu's case, it would be `nixos-rebuild switch --sudo --flake ~/.config/nixos#miyazu`.
 
-```nixos-rebuild switch --use-remote-sudo --flake ~/.config/nixos#miyazu```
-
-### Screenshots
+## Showcase
 
 ![Empty desktop](/papes/showcase/2025-05-31-220016_hyprshot.png)
 
