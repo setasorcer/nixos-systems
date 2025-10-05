@@ -48,3 +48,5 @@ To rebuild with the host you want, use this command followed by the host you wan
 ![Desktop with rofi](/papes/showcase/2025-10-04-143201_niri.png)
 
 ![Desktop with swaync and PEAK song](/papes/showcase/2025-10-04-143211_niri.png)
+
+![Overview with PEAK album](/papes/showcase/2025-10-04-154749_niri.png)
