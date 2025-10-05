@@ -1,20 +1,39 @@
 # NixOS for Kyoko
 
-My personal NixOS deployment for my desktop, laptop, and maybe future systems as well. Farewell, Artix. You have served me well.
+My personal NixOS deployment for my workstation, server, school laptop, and future systems. Farewell, Artix.
 
-## Information
+## Main Features
 
-Unfortunately the only experience I have with installing this on a new system is when I installed Nix on my laptop, which I did around 5 months ago. My best advice would be to just create a new Nix installation, enable flakes, and then rebuild the new system with the host you desire.
+### Itsuku/Teppei
 
-For reference, **miyazu** is made with a desktop in mind, whereas **itsuku** is made with a laptop (specifically a ThinkPad T480) in mind. You may fork this repository and edit it to your needs.
+- Niri (window manager)
+- Waybar (taskbar)
+- Swaync (currently broken notification daemon)
+- foot (terminal)
+- NVF (declarative config for neovim)
 
-My desktop is all AMD, so you may need to reconfigure some options if you are an Nvidia or Intel user. For laptops other than a T480, remove the import from nixos-hardware in `/hosts/itsuku/default.nix` and try to look for a predefined config for your laptop [here](https://github.com/NixOS/nixos-hardware). If you can't find a config for your specific laptop, you should still be fine but you may miss out on some model-specific features you don't know about, or encounter a weird issue with your specific laptop. Whatever the case is, this is out of my expertise.
+Along with a bunch of other programs!
 
-Otherwise, don't be afraid to look at all the code. It shouldn't be too overwhelming.
+`
+feishin (subsonic/jellyfin music player)
+zen-beta (web browser)
+pass (password manager)
+`
 
-## So what's the difference?
+Itsuku is used on my main workstation computers (A Framework 16 and ThinkPad T480). This is made with integration to my server in mind. I used to use mpd for my music player, and good old mpv for watching Linux ISOs.
 
-Other than the ones I've described earlier, itsuku comes with a more "compact" waybar (The workspace buttons are moved to the left, and battery modules are activated). Animations are also disabled in order to save battery. Programs that I only want on specific systems are also present, for example Anki is only on itsuku (located in `/hosts/itsuku/default.nix`). Host-specific options right now are very messy, and I apologize for that until I can find out a not messy way to have every host-specific setting where I want it, whether it be in the default.nix or the appropriate .nix files.
+### Miyazu
+
+- ZFS (filesystem)
+- QuickSync support
+- SSH with anti intrusion tools (endlessh, fail2ban)
+- *arr for automating media organization
+- Jellyfin for accessing movies, music, books, and TV shows
+- Immich for storing personal photos
+- Copyparty for simple file uploading/sharing
+- Deluge for downloading Linux ISOs
+
+Miyazu is used on my main home server. Currently I'm just learning the hoops of making a server, and since I already know Nix, I thought it would be nice to try. So far I've been having a lot of fun and headaches, but mostly fun. Up until this point I've been storing everything locally on my workstation machines, so it's nice to have something dedicated to storing your data **somewhat** reliably. (somewhat meaning it entirely depends on the person maintaining the server)
 
 ## Rebuilding
 
