@@ -43,10 +43,8 @@ To rebuild with the host you want, use this command followed by the host you wan
 
 ## Showcase
 
-![Empty desktop](/papes/showcase/2025-05-31-220016_hyprshot.png)
+![Empty desktop](/papes/showcase/2025-10-04-143158_niri.png)
 
-![Desktop with rofi](/papes/showcase/2025-05-31-220038_hyprshot.png)
+![Desktop with rofi](/papes/showcase/2025-10-04-143201_niri.png)
 
-![Desktop with PEAK song](/papes/showcase/2025-06-12-193549_hyprshot.png)
-
-![Desktop with swaync and PEAK song](/papes/showcase/2025-05-31-220327_hyprshot.png)
+![Desktop with swaync and PEAK song](/papes/showcase/2025-10-04-143211_niri.png)
