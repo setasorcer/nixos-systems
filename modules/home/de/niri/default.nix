@@ -72,10 +72,14 @@
           matches = [{ app-id = "moe.launcher.an-anime-game-launcher"; title = "^An Anime Game Launcher$"; }];
           default-window-height.proportion = 1.0 / 2.0;
         }
-        {
-          matches = [{ app-id = "de.wagnermartin.Plattenalbum"; title = "^Plattenalbum$"; }];
-          default-window-height.proportion = 1.0 / 2.0;
-        }
+	{
+          matches = [{ app-id = "feishin"; }];
+          default-column-width.proportion = 2.0 / 3.0;
+	}
+	{
+          matches = [{ app-id = "vesktop"; title = "^Discord.*$"; }];
+          default-column-width.proportion = 1.0 / 3.0;
+	}
         {
           matches = [{ app-id = "VirtualBox Machine"; }];
           default-column-width.proportion = 1.0;
