@@ -13,5 +13,6 @@
     ./swayimg.nix
     ./mpv.nix
     ./floorp.nix
+    ./vesktop.nix
   ];
 }

@@ -141,9 +141,9 @@ in
     
     "Mod+W".action = toggle-column-tabbed-display;
     
-    "Shift+Print".action = screenshot;
+    "Shift+Print".action.screenshot = [ ];
     "Print".action.screenshot-screen = [ ];
-    "Mod+Print".action = screenshot-window;
+    "Mod+Print".action.screenshot-window = [ ];
     
     "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
     "Mod+Escape".allow-inhibiting = false;
