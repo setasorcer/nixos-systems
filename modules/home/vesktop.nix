@@ -5,18 +5,20 @@ let
   vesktopWithRPC = pkgs.writeShellScriptBin "vesktop-with-rpc" ''
     #!/usr/bin/env bash
     set -euo pipefail
-    # Start Jellyfin RPC in the background and remember its PID
+
+    # Start jellyfin-rpc in the background
     ${pkgs.jellyfin-rpc}/bin/jellyfin-rpc &
-    pid=$!
+    rpc_pid=$!
 
-    # When Vesktop exits, kill Jellyfin RPC
-    trap "kill $pid" EXIT
+    # Start vesktop (in foreground)
+    ${pkgs.vesktop}/bin/vesktop
 
-    # Launch Vesktop
-    exec ${pkgs.vesktop}/bin/vesktop
+    # Once vesktop exits, kill jellyfin-rpc
+    kill $rpc_pid 2>/dev/null || true
   '';
 in
 {
+  home.packages = [ pkgs.vesktop ];
   xdg.desktopEntries.vesktop = {
     name = "Vesktop (with Jellyfin RPC)";
     genericName = "Discord Client";

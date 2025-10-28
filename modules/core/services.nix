@@ -24,6 +24,18 @@
     xserver.excludePackages = [ pkgs.xterm ];
     # Don't do anything when the lid is closed
     logind.settings.Login.HandleLidSwitch = "ignore";
+    printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
+    };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
 
   programs = {

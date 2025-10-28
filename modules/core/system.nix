@@ -10,10 +10,16 @@
       # Add me as a trusted user!
       trusted-users = [ username ];
     };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than +5";
-    };
+    #gc = {
+    #   automatic = true;
+    #  options = "--delete-older-than +5";
+    #};
+  };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/${username}/.config/nixos"; # sets NH_OS_FLAKE variable for you
   };
 
   time.timeZone = "Pacific/Honolulu";

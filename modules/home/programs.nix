@@ -11,7 +11,6 @@
     ffmpeg
     imagemagick
     qbittorrent
-    vesktop
     yt-dlp
 
     # Compilation/coding
@@ -49,7 +48,7 @@
     };
     git = {
       enable = true;
-      extraConfig = {
+      settings = {
         init.defaultBranch = "main";
       };
     };
