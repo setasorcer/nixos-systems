@@ -14,7 +14,7 @@
   };
   # lf accessories
   home.packages = with pkgs; [
-    xdragon # Drag and drop with dragon
+    dragon-drop # Drag and drop with dragon
     chafa # Sixel companion
     # Unfree ouch build for rar functions
     (ouch.override {
