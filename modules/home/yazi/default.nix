@@ -81,6 +81,7 @@
         # External applications
         { run = '' shell 'dragon-drop "$@"' ''; on = [ "<C-n>" ]; desc = "Drag and drop with dragon"; }
         { run = '' shell 'ouch d "$@"' ''; on = [ "<S-e>" ]; desc = "Extract here with ouch"; }
+        { run = '' plugin ouch ''; on = [ "<S-c>" ]; desc = "Compress with ouch"; }
 
         # Bookmarks with yamb
         { on = [ "u" "a" ]; run = "plugin yamb save"; desc = "Add bookmark"; }
