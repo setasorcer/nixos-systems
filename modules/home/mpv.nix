@@ -24,7 +24,8 @@
     scripts = with pkgs.mpvScripts; [
       modernx
       thumbfast
-      videoclip
+      #videoclip
+      mpv-webm
       mpris
       mpvacious
     ];

@@ -69,8 +69,8 @@ table.insert(bookmarks, {
   key = "s"
 })
 table.insert(bookmarks, {
-  tag = home_path .. "/mnt/503deb8a-29bb-4295-bec4-ae7875d26688/vg/steam/steamapps/common",
-  path = home_path .. "/mnt/503deb8a-29bb-4295-bec4-ae7875d26688/vg/steam/steamapps/common/",
+  tag = "/mnt/503deb8a-29bb-4295-bec4-ae7875d26688/vg/steam/steamapps/common",
+  path = "/mnt/503deb8a-29bb-4295-bec4-ae7875d26688/vg/steam/steamapps/common/",
   key = "g"
 })
 

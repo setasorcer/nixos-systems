@@ -11,7 +11,7 @@
     nicotine-plus # Hehehe
     #plattenalbum # GTK interface for mpd
     #jamesdsp # EQ
-    feishin
+    jellyfin-tui
   ];
   services = {
     mpd = {

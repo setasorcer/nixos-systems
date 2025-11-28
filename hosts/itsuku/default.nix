@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ username, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -22,6 +22,10 @@
  
   # Power saving
   networking.networkmanager.wifi.powersave = true;
+  services.udev.extraRules = ''
+  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver"
+  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="1",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance"
+'';
 
   # Framework-specific
   services.fwupd.enable = true;
