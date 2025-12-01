@@ -29,6 +29,11 @@
     templates = null;
     videos = "${config.home.homeDirectory}/vid";
   };
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "floorp";

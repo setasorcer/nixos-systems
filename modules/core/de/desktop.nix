@@ -13,7 +13,7 @@
     gamescope
     xwayland-satellite-unstable
 
-    inputs.swww.packages.${pkgs.system}.swww
+    inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     hyprpicker
   ];
   services.displayManager.gdm = {
