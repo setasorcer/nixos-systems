@@ -5,13 +5,14 @@
   # Utilities for music
   home.packages = with pkgs; [
     #mpc # mpd CLI
-    playerctl # mpris CLI
+    #playerctl # mpris CLI
     rsgain # ReplayGain tool
     #kid3-qt # Metatag editor
-    nicotine-plus # Hehehe
+    #nicotine-plus # Hehehe
     #plattenalbum # GTK interface for mpd
     #jamesdsp # EQ
     jellyfin-tui
+    picard
   ];
   services = {
     mpd = {

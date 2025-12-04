@@ -20,7 +20,7 @@
     };
 
     stylix.url = "github:danth/stylix";
-    swww.url = "github:LGFae/swww";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,8 +37,6 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    copyparty.url = "github:9001/copyparty";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 

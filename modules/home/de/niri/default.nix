@@ -11,8 +11,8 @@
     settings = {
       spawn-at-startup = [
         { argv = ["systemctl" "--user" "reset-failed" "waybar.service"]; }
-        { argv = ["swww-daemon"]; }
-        { argv = ["swww-daemon" "--namespace" "blur"]; }
+        { argv = ["awww-daemon"]; }
+        { argv = ["awww-daemon" "--namespace" "blur"]; }
         { argv = ["niriswitcher"]; }
       ];
 
@@ -88,7 +88,7 @@
 
       layer-rules = [
         {
-          matches = [{ namespace = "^swww-daemonblur$"; }];
+          matches = [{ namespace = "^awww-daemonblur$"; }];
           place-within-backdrop = true;
         }
       ];
