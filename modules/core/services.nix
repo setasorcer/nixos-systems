@@ -6,12 +6,6 @@
 
   # Install services
   services = {
-    # Mullvad
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.mullvad-vpn;
-    };
-
     # USB automount
     devmon.enable = true;
     gvfs.enable = true;
