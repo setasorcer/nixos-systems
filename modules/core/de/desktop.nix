@@ -21,6 +21,12 @@
     wayland = true;
   };
 
+  programs.kanshi = {
+    enable = true;
+    wallpaper = ./../../../papes/pape.jpg;
+    wallpaperBlur = ./../../../papes/pape-blurred.jpg;
+  };
+
   # Fonts
   fonts.packages = with pkgs; [
     noto-fonts-cjk-sans
