@@ -48,13 +48,13 @@ in {
       profile {
         output DP-3 mode 2560x1440@164.956
         output eDP-2 disable
-        exec ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img ${cfg.wallpaper}''}
-        exec ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img --namespace blur ${cfg.wallpaperBlur}''}
+        ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img ${cfg.wallpaper}''}
+        ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img --namespace blur ${cfg.wallpaperBlur}''}
       }
       profile {
         output * enable
-        exec ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img ${cfg.wallpaper}''}
-        exec ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img --namespace blur ${cfg.wallpaperBlur}''}
+        ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img ${cfg.wallpaper}''}
+        ${lib.optionalString (cfg.wallpaper != null) ''exec /run/current-system/sw/bin/awww img --namespace blur ${cfg.wallpaperBlur}''}
       }
       ${cfg.extraConfig}
     '';

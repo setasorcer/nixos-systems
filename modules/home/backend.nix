@@ -34,6 +34,27 @@
     xdgOpenUsePortal = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+  # hide certain desktop entries in launcher
+  xdg.desktopEntries = {
+    "org.fcitx.fcitx5-migrator" = {
+      name = "Fcitx5 Migration Wizard";
+      exec = "fcitx5-migrator";
+      icon = "fcitx";
+      settings.NoDisplay = "true";
+    };
+    "org.gnome.Nautilus" = {
+      name = "Files";
+      exec = "nautilus --new-window";
+      icon = "org.gnome.Nautilus";
+      settings.NoDisplay = "true";
+    };
+    "kbd-layout-viewer5" = {
+      name = "Keyboard layout viewer";
+      exec = "kbd-layout-viewer5";
+      icon = "input-keyboard";
+      settings.NoDisplay = "true";
+    };
+  };
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "floorp";
