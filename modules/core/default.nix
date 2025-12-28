@@ -6,6 +6,7 @@
     ./pipewire.nix
     ./security.nix
     ./services.nix
+    ./sops.nix
     ./system.nix
     ./user.nix
 

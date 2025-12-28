@@ -32,6 +32,7 @@
       };
 
       lsp.enable = true;
+      lsp.servers.nixd.settings.nil.nix.autoArchive = false;
       languages = {
         enableTreesitter = true;
 

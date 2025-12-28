@@ -59,6 +59,7 @@ in
       pkgs.nexusmods-app-unfree
       pkgs.obs-studio
 
+      pkgs.kdePackages.kdenlive
       # pkgs.davince-resolve
       # pkgs.gimp3-with-plugins
       # pkgs.tenacity
