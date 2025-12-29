@@ -8,18 +8,28 @@ My personal NixOS deployment for my workstation, server, school laptop, and futu
 
 - Niri (window manager)
 - Waybar (taskbar)
-- Swaync (currently broken notification daemon)
+- Swaync (notification daemon)
+- rofi (launcher)
 - foot (terminal)
 - NVF (declarative config for neovim)
 
 Along with a bunch of other programs!
 
 ```
-feishin (subsonic/jellyfin music player)
-zen-beta (web browser)
-pass (password manager)
+anki
+bluetui
+btop
+jellyfin-tui (jellyfin music player)
+kdenlive (video editor)
+mpv
+picard (music tagger)
+qbittorrent
+steam
 swayimg (image viewer)
+vesktop
 yazi (file manager)
+zathura (pdf viewer)
+zen-beta (web browser)
 ```
 
 Itsuku is used on my main workstation computers (A Framework 16 and ThinkPad T480). This is made with integration to my server in mind. I used to use mpd for my music player, and good old mpv for watching Linux ISOs.
