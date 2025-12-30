@@ -119,6 +119,5 @@ ANALOGIO: 0
   };
 
 
-  games.steam.enabled = true;
   virtualization.enabled = true;
 }
