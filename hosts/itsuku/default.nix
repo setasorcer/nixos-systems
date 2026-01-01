@@ -32,10 +32,10 @@
 
   # Laptop optimizations: battery modules, disable hyprland decorations
   desktop = {
-    virtualization.enable = true;
+    virtualisation.enable = true;
     games = {
-      steam.enabled = true;
-      hoyo.enabled = true;
+      steam.enable = true;
+      aagl.enable = true;
     };
   };
   environment.systemPackages = with pkgs; [

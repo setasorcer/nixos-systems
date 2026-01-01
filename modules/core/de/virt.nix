@@ -1,17 +1,18 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfgvirt = config.virtualization;
+  cfgvirt = config.desktop.virtualisation;
 in
 {
   options.desktop = {
-    virtualization.enable = lib.mkEnableOption "Enable virtualization through QEMU and virt-manager";
+    virtualisation.enable = lib.mkEnableOption "Enable virtualisation through QEMU and virt-manager";
   };
 
   config = lib.mkIf cfgvirt.enable {
     environment.systemPackages = with pkgs; [
       qemu
       virtio-win
+      dnsmasq
     ];
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;

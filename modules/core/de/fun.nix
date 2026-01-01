@@ -1,7 +1,7 @@
 { pkgs, config, lib, inputs, ... }:
 
 let
-  cfghoyo = config.desktop.games.hoyo;
+  cfgaagl = config.desktop.games.aagl;
   cfgsteam = config.desktop.games.steam;
 in
 {
@@ -14,7 +14,7 @@ in
     };
   };
   config = lib.mkMerge [
-    (lib.mkIf cfghoyo.enable {
+    (lib.mkIf cfgaagl.enable {
       nix.settings = inputs.aagl.nixConfig; # Set up Cachix
       programs.anime-game-launcher.enable = true;
     })
