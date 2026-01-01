@@ -1,9 +1,10 @@
 {
   imports = [
     ./desktop.nix
+    ./fun.nix
     ./input.nix
-    ./stylix.nix
     ./kanshi.nix
-    ./power.nix
+    ./stylix.nix
+    ./virt.nix
   ];
 }
