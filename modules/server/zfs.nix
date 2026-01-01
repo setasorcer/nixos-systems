@@ -19,5 +19,5 @@ in
     supportedFilesystems = [ "zfs" ];
     zfs.forceImportRoot = false;
   };
-  services.zfs.autoScrub = true;
+  services.zfs.autoScrub.enable = true;
 }
