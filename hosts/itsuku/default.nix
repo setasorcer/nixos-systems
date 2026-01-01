@@ -22,21 +22,27 @@
  
   # Power saving
   #networking.networkmanager.wifi.powersave = true;
-  #services.udev.extraRules = ''
-  #SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver"
-  #SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="1",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance"
-  #'';
+  services.udev.extraRules = ''
+  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver"
+  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="1",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance"
+  '';
 
   # Framework-specific
   services.fwupd.enable = true;
 
   # Laptop optimizations: battery modules, disable hyprland decorations
-  games = {
-    steam.enabled = true;
-    hoyo.enabled = true;
+  desktop = {
+    virtualisation.enable = true;
+    games = {
+      steam.enable = true;
+      aagl.enable = true;
+    };
   };
-  power.enabled = true;
-  virtualization.enabled = true;
-
-  networking.firewall.allowedTCPPorts = [ 2234 ];
+  environment.systemPackages = with pkgs; [
+    anki-bin
+    prismlauncher
+    nexusmods-app-unfree
+    obs-studio
+    kdePackages.kdenlive
+  ];
 }

@@ -5,6 +5,8 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "jellyfin" "immich" ];
+    extraGroups = [ "networkmanager" "wheel" "immich" "kyoka" "deluge" "slskd" ];
   };
+
+  users.groups.kyoka = {};
 }

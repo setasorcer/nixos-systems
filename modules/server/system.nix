@@ -12,7 +12,10 @@
     supportedFilesystems = [ "zfs" ];
     zfs.forceImportRoot = false;
   };
-
+  swapDevices = [{
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+  }];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix = {
