@@ -53,13 +53,18 @@ in
     # Controller bluetooth support
     hardware.steam-hardware.enable = cfgsteam.enabled;
 
-    environment.systemPackages = lib.mkIf cfgpower.enabled [
-      pkgs.anki-bin
-      pkgs.prismlauncher
-      pkgs.nexusmods-app-unfree
-      pkgs.obs-studio
-
-      pkgs.kdePackages.kdenlive
+    environment.systemPackages = with pkgs; lib.flatten [
+      (lib.optionals cfgpower.enabled [
+        anki-bin
+        prismlauncher
+        nexusmods-app-unfree
+        obs-studio
+        kdePackages.kdenlive
+      ])
+      (lib.optionals cfgvirt.enabled [
+        qemu
+        virtio-win
+      ])
       # pkgs.davince-resolve
       # pkgs.gimp3-with-plugins
       # pkgs.tenacity
@@ -67,5 +72,7 @@ in
 
     # Virtualisation
     virtualisation.virtualbox.host.enable = cfgvirt.enabled;
+    virtualisation.libvirtd.enable = cfgvirt.enabled;
+    programs.virt-manager.enable = cfgvirt.enabled;
   };
 }
