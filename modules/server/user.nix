@@ -7,7 +7,6 @@
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "immich" "kyoka" "deluge" "slskd" ];
   };
-  programs.bash.shellInit = ''umask 0002'';
 
   users.groups.kyoka = {};
 }
