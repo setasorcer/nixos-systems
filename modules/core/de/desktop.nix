@@ -31,6 +31,7 @@
   fonts.packages = with pkgs; [
     noto-fonts-cjk-sans
     nerd-fonts.inconsolata
+    aileron
   ];
 
   hardware.graphics = {
