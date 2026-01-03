@@ -26,6 +26,7 @@
     wallpaper = ./../../../papes/pape.jpg;
     wallpaperBlur = ./../../../papes/pape-blurred.jpg;
   };
+  programs.sunsetr.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [

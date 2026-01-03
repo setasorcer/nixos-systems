@@ -16,7 +16,7 @@
     # Compilation/coding
     gnumake
     libgcc
-    qmk
+    #qmk
     sops
 
     # Gaming tools

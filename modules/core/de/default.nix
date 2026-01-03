@@ -4,6 +4,7 @@
     ./fun.nix
     ./input.nix
     ./kanshi.nix
+    ./sunsetr.nix
     ./stylix.nix
     ./virt.nix
   ];
