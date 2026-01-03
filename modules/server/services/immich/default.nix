@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, ... }:
 
 let
   service = "immich";
@@ -20,9 +20,14 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
+    _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+      inherit (pkgs.stdenv.hostPlatform) system;
+      inherit (config.nixpkgs) config;
+    };
     services.${service} = {
       enable = true;
       openFirewall = true;
+      package = pkgsUnstable.immich;
       host = "0.0.0.0";
       port = cfg.port;
       mediaLocation = "${server.dataDir}/immich";

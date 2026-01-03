@@ -25,11 +25,11 @@
   services.tlp = {
     enable = true;
     settings = {
-      START_CHARGE_TRESH_BAT0 = 55;
-      STOP_CHARGE_TRESH_BAT0 = 80;
+      START_CHARGE_THRESH_BAT0 = 55;
+      STOP_CHARGE_THRESH_BAT0 = 80;
 
-      START_CHARGE_TRESH_BAT1 = 55;
-      STOP_CHARGE_TRESH_BAT1 = 80;
+      START_CHARGE_THRESH_BAT1 = 55;
+      STOP_CHARGE_THRESH_BAT1 = 80;
 
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -118,6 +118,7 @@ ANALOGIO: 0
       programs.niri.settings.outputs."eDP-2".scale = lib.mkForce 1;
   };
 
-
-  virtualization.enabled = true;
+  desktop = {
+    virtualisation.enable = true;
+  };
 }

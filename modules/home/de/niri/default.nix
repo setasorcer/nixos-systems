@@ -14,6 +14,7 @@
         { argv = ["awww-daemon"]; }
         { argv = ["awww-daemon" "--namespace" "blur"]; }
         { argv = ["niriswitcher"]; }
+        { argv = ["sunsetr -b"]; }
       ];
 
       input = {
