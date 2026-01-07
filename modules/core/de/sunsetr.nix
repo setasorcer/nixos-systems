@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 let
   program = "sunsetr";
@@ -26,14 +26,14 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
 
-    /*(systemd.user.services.sunsetr = {
+    systemd.user.services.sunsetr = {
       description = "Sunsetr light filter automation";
       after = [ "graphical-session.target" ];
       wantedBy = [ "graphical-session.target" ];
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/${program} -b";
+        ExecStart = "${cfg.package}/bin/${program} -b -c /home/${username}/.config/sunsetr";
         Restart = "on-failure";
       };
-    };*/
+    };
   };
 }
