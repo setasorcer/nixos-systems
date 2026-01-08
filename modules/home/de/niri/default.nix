@@ -13,8 +13,6 @@
         { argv = ["systemctl" "--user" "reset-failed" "waybar.service"]; }
         { argv = ["awww-daemon"]; }
         { argv = ["awww-daemon" "--namespace" "blur"]; }
-        { argv = ["niriswitcher"]; }
-        { argv = ["sunsetr -b"]; }
       ];
 
       input = {
