@@ -31,7 +31,7 @@ in {
       after = [ "graphical-session.target" ];
       wantedBy = [ "graphical-session.target" ];
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/${program} -b -c /home/${username}/.config/sunsetr";
+        ExecStart = "${cfg.package}/bin/${program} -c /home/${username}/.config/sunsetr";
         Restart = "on-failure";
       };
     };
