@@ -36,6 +36,15 @@
     games = {
       steam.enable = true;
       aagl.enable = true;
+      retroarch = {
+        enable = true;
+        cores = [
+          "dolphin"
+          "pcsx2"
+          "np2kai"
+          "flycast"
+        ];
+      };
     };
   };
   environment.systemPackages = with pkgs; [
