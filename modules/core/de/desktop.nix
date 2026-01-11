@@ -16,10 +16,11 @@
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     hyprpicker
   ];
-  services.displayManager.gdm = {
+  /*services.displayManager.gdm = {
     enable = true;
     wayland = true;
-  };
+  };*/
+  services.displayManager.cosmic-greeter.enable = true;
 
   programs.kanshi = {
     enable = true;
