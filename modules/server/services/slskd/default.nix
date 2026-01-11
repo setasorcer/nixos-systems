@@ -47,5 +47,6 @@ in
     
     # Almost forgot this lmao
     networking.firewall.allowedTCPPorts = [ cfg.port.web cfg.port.listen ];
+    users.users.${service}.extraGroups = [ "kyoka" ];
   };
 }
