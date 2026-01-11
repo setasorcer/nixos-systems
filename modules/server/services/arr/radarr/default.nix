@@ -25,6 +25,6 @@ in
       openFirewall = true;
       settings.server.port = cfg.port;
     };
-    users.users.${service}.extraGroups = [ "kyoka" ];
+    users.users.${service}.extraGroups = [ "kyoka" "sabnzbd" ];
   };
 }
