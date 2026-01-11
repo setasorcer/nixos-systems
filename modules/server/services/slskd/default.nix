@@ -29,6 +29,8 @@ in
       environmentFile = config.sops.secrets.slskd-env.path;
       domain = null;
       settings = {
+        directories.incomplete = "${server.dataDir}/downloads/incomplete";
+        directories.downloads = "${server.dataDir}/downloads/complete";
         shares.directories = [
           "${server.dataDir}/media/music"
           "${server.dataDir}/media/ost"
