@@ -82,6 +82,7 @@ in
           format = "<span size='9pt' weight='700'>{}</span>";
           tooltip = false;
           separate-outputs = true;
+          icon = true;
         };
         # Center
         "niri/workspaces" = {

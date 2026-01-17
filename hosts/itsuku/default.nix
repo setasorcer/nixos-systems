@@ -39,10 +39,12 @@
       retroarch = {
         enable = true;
         cores = [
+          "beetle-psx-hw"
           "dolphin"
           "pcsx2"
           "np2kai"
           "flycast"
+          "mupen64plus"
         ];
       };
     };
