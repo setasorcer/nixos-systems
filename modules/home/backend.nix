@@ -54,6 +54,13 @@
       icon = "input-keyboard";
       settings.NoDisplay = "true";
     };
+    "com.libretro.RetroArch" = {
+      name = "RetroArch";
+      exec = "env DRI_PRIME=1 WAYLAND_DISPLAY= retroarch %U";
+      icon = "com.libretro.RetroArch";
+      type = "Application";
+      categories = [ "Game" "Emulator" ];
+    };
   };
   home.sessionVariables = {
     EDITOR = "nvim";
