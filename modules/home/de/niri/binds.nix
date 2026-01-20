@@ -1,18 +1,5 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 
-let
-  lowbright-fix = pkgs.writeShellScript "lightctl-mod.sh" ''
-    bright=$(${pkgs.light}/bin/light -G)
-
-    if (( $(echo "$bright < 6" | bc -l) )); then
-      lightctl set 1
-    elif (( $(echo "$bright < 2" | bc -l) )); then
-      lightctl set 5
-    else
-      lightctl down
-    fi
-  '';
-in
 {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
@@ -21,38 +8,38 @@ in
     "Mod+Return".repeat = false;
     "Mod+R".action = spawn "foot" "yazi";
     "Mod+R".repeat = false;
-    "Mod+D".action = spawn "rofi" "-show" "drun" "-show-icons";
+    "Mod+D".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     "Mod+D".repeat = false;
     "Mod+0".action = spawn "foot" "bc" "-lq";
     "Mod+0".repeat = false;
-    "Mod+BackSpace".action = spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu";
+    "Mod+BackSpace".action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
     "Mod+BackSpace".repeat = false;
     "Mod+Shift+D".action = spawn "tessen";
     "Mod+Shift+D".repeat = false;
-    "Mod+Alt+L".action = spawn "loginctl" "lock-session";
+    "Mod+Alt+L".action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     "Mod+Alt+L".repeat = false;
-    "Mod+N".action = spawn "swaync-client" "-t" "-sw";
+    "Mod+N".action = spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
     "Mod+N".repeat = false;
     
-    "XF86AudioRaiseVolume".action = spawn "volumectl" "raise";
+    "XF86AudioRaiseVolume".action = spawn "noctalia-shell" "ipc" "call" "volume" "increase";
     "XF86AudioRaiseVolume".allow-when-locked = true;
-    "XF86AudioLowerVolume".action = spawn "volumectl" "lower";
+    "XF86AudioLowerVolume".action = spawn "noctalia-shell" "ipc" "call" "volume" "decrease";
     "XF86AudioLowerVolume".allow-when-locked = true;
-    "XF86AudioMute".action = spawn "volumectl" "toggle-mute";
+    "XF86AudioMute".action = spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput";
     "XF86AudioMute".allow-when-locked = true;
-    "XF86AudioMicMute".action = spawn "volumectl" "-m" "set-mute";
+    "XF86AudioMicMute".action = spawn "noctalia-shell" "ipc" "call" "volume" "muteInput";
     "XF86AudioMicMute".allow-when-locked = true;
-    "XF86MonBrightnessUp".action = spawn "lightctl" "up";
+    "XF86MonBrightnessUp".action = spawn "noctalia-shell" "ipc" "call" "brightness" "increase";
     "XF86MonBrightnessUp".allow-when-locked = true;
-    "XF86MonBrightnessDown".action = spawn "${lowbright-fix}";
-    "XF86AudioPlay".action = spawn "playerctl" "play-pause";
-    "XF86AudioStop".action = spawn "playerctl" "stop";
-    "XF86AudioPrev".action = spawn "playerctl" "prev";
-    "XF86AudioNext".action = spawn "playerctl" "next";
-    "Mod+Down".action = spawn "playerctl" "play-pause";
-    "Mod+Up".action = spawn "playerctl" "stop";
-    "Mod+Left".action = spawn "playerctl" "prev";
-    "Mod+Right".action = spawn "playerctl" "next";
+    "XF86MonBrightnessDown".action = spawn "noctalia-shell" "ipc" "call" "brightness" "decrease";
+    "XF86AudioPlay".action = spawn "noctalia-shell" "ipc" "call" "media" "playPause";
+    "XF86AudioStop".action = spawn "noctalia-shell" "ipc" "call" "media" "pause";
+    "XF86AudioPrev".action = spawn "noctalia-shell" "ipc" "call" "media" "previous";
+    "XF86AudioNext".action = spawn "noctalia-shell" "ipc" "call" "media" "next";
+    "Mod+Down".action = spawn "noctalia-shell" "ipc" "call" "media" "playPause";
+    "Mod+Up".action = spawn "noctalia-shell" "ipc" "call" "media" "pause";
+    "Mod+Left".action = spawn "noctalia-shell" "ipc" "call" "media" "previous";
+    "Mod+Right".action = spawn "noctalia-shell" "ipc" "call" "media" "next";
 
     "Mod+O".action = toggle-overview;
     "Mod+O".repeat = false;

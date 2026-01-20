@@ -13,7 +13,6 @@
     gamescope
     xwayland-satellite-unstable
 
-    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     hyprpicker
   ];
   /*services.displayManager.gdm = {
@@ -27,7 +26,7 @@
     wallpaper = ./../../../papes/pape.jpg;
     wallpaperBlur = ./../../../papes/pape-blurred.jpg;
   };
-  programs.sunsetr.enable = true;
+  #programs.sunsetr.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [

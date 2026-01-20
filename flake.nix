@@ -21,7 +21,6 @@
     };
 
     stylix.url = "github:danth/stylix";
-    awww.url = "git+https://codeberg.org/LGFae/awww";
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
