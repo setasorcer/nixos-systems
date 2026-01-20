@@ -6,6 +6,8 @@
 
   # Install services
   services = {
+    # Required by noctalia-shell to monitor battery
+    upower.enable = true;
     # USB automount
     devmon.enable = true;
     gvfs.enable = true;
