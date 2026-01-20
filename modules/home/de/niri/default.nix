@@ -87,7 +87,7 @@
 
       layer-rules = [
         {
-          matches = [{ namespace = "^awww-daemonblur$"; }];
+          matches = [{ namespace = "^noctalia-overview*"; }];
           place-within-backdrop = true;
         }
       ];
