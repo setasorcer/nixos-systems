@@ -67,6 +67,7 @@
     BROWSER = "floorp";
     TERMINAL = "foot";
   };
+  home.file.".face".source = ./../../papes/avatar.jpg;
 
   # Adwaita icon theme
   gtk.enable = true;
