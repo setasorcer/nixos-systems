@@ -10,11 +10,8 @@
       # Add me as a trusted user!
       trusted-users = [ username ];
     };
-    #gc = {
-    #   automatic = true;
-    #  options = "--delete-older-than +5";
-    #};
   };
+  # Nix Helper
   programs.nh = {
     enable = true;
     clean.enable = true;

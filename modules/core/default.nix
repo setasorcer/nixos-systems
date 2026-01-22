@@ -10,6 +10,6 @@
     ./system.nix
     ./user.nix
 
-    ./de
+    ./desktop
   ];
 }

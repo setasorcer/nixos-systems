@@ -1,18 +1,17 @@
+{ ... }:
+
 {
   imports = [
-    ./de
-    ./backend.nix
-
-    ./programs.nix
-    ./music
-    ./yazi
-    ./nvim.nix
-    ./pass.nix
-    ./syncthing.nix
-
-    ./swayimg.nix
-    ./mpv.nix
-    ./floorp.nix
-    ./vesktop.nix
+    ./desktop
+    ./programs
+    ./shell
+    ./xdg
   ];
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    BROWSER = "floorp";
+    TERMINAL = "foot";
+  };
+  home.file.".face".source = ./../../papes/avatar.jpg;
 }

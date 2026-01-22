@@ -2,7 +2,6 @@
 
 {
   hardware.bluetooth.enable = true;
-  environment.systemPackages = with pkgs; [ bluetui ];
 
   # Install services
   services = {
@@ -39,28 +38,11 @@
     fish.enable = true;
     # naNO
     nano.enable = false;
+    # Able to run standalone Linux binaries
     nix-ld = {
       enable = true;
       libraries = [(pkgs.runCommand "steamrun-lib" {}
   "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")];
-    };
-  };
-
-  systemd.timers."clear-cache" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily";
-      Persistent = true;
-    };
-  };
-  systemd.services."clear-cache" = {
-    script = ''
-      set -eu
-      ${pkgs.bash}/bin/sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
     };
   };
 }
