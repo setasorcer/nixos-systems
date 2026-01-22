@@ -38,6 +38,11 @@
     opacity.terminal = 0.9;
     opacity.applications = 0.8;
     fonts = {
+      serif = config.stylix.fonts.sansSerif;
+      sansSerif = {
+        package = pkgs.aileron;
+        name = "Aileron";
+      };
       monospace = {
         package = pkgs.nerd-fonts.inconsolata;
         name = "Inconsolata Nerd Font Mono";
