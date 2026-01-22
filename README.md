@@ -2,28 +2,31 @@
 
 My personal NixOS deployment for my workstation, server, school laptop, and future systems. Farewell, Artix.
 
+Now in noctalia-shell flavour!
+
 ## Main Features
 
 ### Itsuku/Teppei
 
 - Niri (window manager)
-- Waybar (taskbar)
-- Swaync (notification daemon)
-- rofi (launcher)
-- foot (terminal)
-- NVF (declarative config for neovim)
+- Noctalia Shell (desktop shell)
+- Cosmic Greeter
+- Stylix (uses [Mountain colourscheme](https://github.com/mountain-theme/Mountain/))
+- [NVF config](https://github.com/NotAShelf/nvf), by NotAShelf
 
-Along with a bunch of other programs!
+Along with a bunch of other programs and preconfigured settings!
 
 ```
 anki
-bluetui
 btop
+foot
 jellyfin-tui (jellyfin music player)
 kdenlive (video editor)
 mpv
 picard (music tagger)
+qemu
 qbittorrent
+retroarch
 steam
 swayimg (image viewer)
 vesktop
@@ -32,7 +35,7 @@ zathura (pdf viewer)
 zen-beta (web browser)
 ```
 
-Itsuku is used on my main workstation computers (A Framework 16 and ThinkPad T480). This is made with integration to my server in mind. I used to use mpd for my music player, and good old mpv for watching Linux ISOs.
+Itsuku and Teppei are used on my main workstation computers (A Framework 16 and ThinkPad T480 respectively). This is made with integration to my server in mind, hence the use of jellyfin-tui.
 
 ### Miyazu
 
@@ -54,10 +57,10 @@ To rebuild with the host you want, use this command followed by the host you wan
 
 ## Showcase
 
-![Empty desktop](/papes/showcase/2025-10-04-143158_niri.png)
+![Empty desktop](/papes/showcase/2026-01-21-230536_niri.png)
 
-![Desktop with rofi](/papes/showcase/2025-10-04-143201_niri.png)
+![Desktop with launcher](/papes/showcase/2026-01-21-230440_niri.png)
 
-![Desktop with swaync and PEAK song](/papes/showcase/2025-12-28-143908_niri.png)
+![Desktop with control center and music showcase](/papes/showcase/2026-01-21-230712_niri.png)
 
-![Overview with PEAK album](/papes/showcase/2025-12-28-143913_niri.png)
+![Overview showcase](/papes/showcase/2026-01-21-230937_niri.png)
