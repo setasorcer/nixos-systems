@@ -53,7 +53,6 @@
     anki-bin
     prismlauncher
     nexusmods-app-unfree
-    obs-studio
     kdePackages.kdenlive
   ];
 }
