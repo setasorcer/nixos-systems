@@ -11,14 +11,10 @@
       systemd-boot.consoleMode = "max";
       efi.canTouchEfiVariables = true;
     };
+    # Pretty boot loading screen
     plymouth = {
       enable = true;
       theme = "bgrt";
-    #  themePackages = with pkgs; [
-    #    (adi1090x-plymouth-themes.override {
-    #      selected_themes = [ "rings" ];
-    #    })
-    #  ];
     };
     consoleLogLevel = 0;
     initrd.verbose = false;

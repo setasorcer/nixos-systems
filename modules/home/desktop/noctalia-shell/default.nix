@@ -1,5 +1,8 @@
 { config, inputs, ... }:
 
+let
+  region = "Honolulu";
+in
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -387,7 +390,7 @@
         "firstDayOfWeek": 0,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "Tokyo",
+        "name": "${region}",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,

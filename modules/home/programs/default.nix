@@ -17,17 +17,18 @@
   ];
 
   home.packages = with pkgs; [
-    # System apps/generic
-    btop
+    # System monitoring
     bc # calculator
     ncdu # Disk space checker
+    nvtopPackages.amd
+    ryzenadj
 
-    # Media toold
+    # Multimedia toold
     ffmpeg
     imagemagick
-    qbittorrent
     yt-dlp
     gpu-screen-recorder
+    qbittorrent
 
     # Compilation/coding
     gnumake
@@ -35,13 +36,12 @@
     qmk
     sops
 
-    # Gaming tools
-    nvtopPackages.amd
-    ryzenadj
-    
     # Sound/music tools
     jellyfin-tui
     picard
     pulsemixer
+
+    # Misc
+    hyprpicker
   ];
 }

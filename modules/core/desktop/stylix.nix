@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
@@ -37,21 +37,6 @@
     opacity.popups = 0.9;
     opacity.terminal = 0.9;
     opacity.applications = 0.8;
-    fonts = {
-      serif = config.stylix.fonts.sansSerif;
-      sansSerif = {
-        package = pkgs.aileron;
-        name = "Aileron";
-      };
-      monospace = {
-        package = pkgs.nerd-fonts.inconsolata;
-        name = "Inconsolata Nerd Font Mono";
-      };
-      emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
-      };
-    };
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePineDawn-Linux";
