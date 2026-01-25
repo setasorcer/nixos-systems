@@ -62,7 +62,7 @@
 
       struts = {
         top = 8;
-        bottom = 32;
+        bottom = 8;
         left = 32;
         right = 32;
       };

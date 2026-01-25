@@ -23,6 +23,8 @@ in
     "Mod+Alt+L".repeat = false;
     "Mod+N".action.spawn = noctalia "notifications toggleHistory";
     "Mod+N".repeat = false;
+    "Mod+B".action.spawn = noctalia "controlCenter toggle";
+    "Mod+B".repeat = false;
     
     "XF86AudioRaiseVolume".action.spawn = noctalia "volume increase";
     "XF86AudioRaiseVolume".allow-when-locked = true;
