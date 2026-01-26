@@ -2,6 +2,8 @@
 
 {
   hardware.bluetooth.enable = true;
+  # OpenCL
+  hardware.graphics.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
 
   # Install services
   services = {

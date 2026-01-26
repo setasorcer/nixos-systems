@@ -17,11 +17,4 @@
     wayland-utils
     xwayland-satellite-unstable
   ];
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      rocmPackages.clr.icd # OpenCL (fixes Davinci)
-    ];
-  };
 }
