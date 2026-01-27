@@ -50,6 +50,14 @@ in
         enable = true;
         port = 8089;
       };
+      glance = {
+        enable = true;
+        port = 8087;
+      };
+      headscale = {
+        enable = true;
+        port = 8085;
+      };
       homepage-dashboard = {
         enable = true;
         port = 8082;
@@ -85,6 +93,10 @@ in
       slskd = {
         enable = true;
         port.web = 5030;
+      };
+      szurubooru = {
+        enable = true;
+        port = 8086;
       };
       vaultwarden = {
         enable = true;

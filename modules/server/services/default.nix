@@ -88,6 +88,8 @@
     ./arr/sonarr
     ./deluge
     ./filebrowser
+    ./glance
+    ./headscale
     ./homepage
     ./immich
     ./jellyfin
@@ -98,6 +100,7 @@
     ./sabnzbd
     #./searxng
     ./slskd
+    ./szurubooru
     ./vaultwarden
   ];
 }
