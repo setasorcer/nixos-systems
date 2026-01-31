@@ -39,6 +39,7 @@
     # Sound/music tools
     jellyfin-tui
     picard
+    rsgain # needed by picard
     pulsemixer
 
     # Misc
