@@ -26,7 +26,10 @@ in
       port = cfg.port;
       settings = {
         server_url = "https://${cfg.url}";
-        dns.base_domain = cfg.url;
+        dns = {
+          base_domain = server.internalDomain;
+          nameservers.global = [ "1.1.1.1" "8.8.8.8" ];
+        };
       };
     };
     services.caddy.virtualHosts."${cfg.url}" = {

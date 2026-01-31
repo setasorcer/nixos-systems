@@ -33,4 +33,16 @@
     mode = "0400";
     restartUnits = [ "namecheap-ddns.service" ];
   };
+  #sops.secrets.szurubooru-secret = {
+  #  owner = "szurubooru";
+  #  group = "szurubooru";
+  #  path = "/var/lib/szurubooru/szurubooru-secret";
+  #  mode = "0400";
+  #};
+  #sops.secrets.szurubooru-password = {
+  #  owner = "szurubooru";
+  #  group = "szurubooru";
+  #  path = "/var/lib/szurubooru/szurubooru-password";
+  #  mode = "0400";
+  #};
 }

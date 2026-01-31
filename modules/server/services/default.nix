@@ -16,6 +16,13 @@
         Base domain used by Caddy
       '';
     };
+    internalDomain = lib.mkOption {
+      default = "";
+      type = lib.types.str;
+      description = ''
+        Domain name used by Headscale and Tailscale devices
+      '';
+    };
     localDomain = lib.mkOption {
       default = "";
       type = lib.types.str;
@@ -89,7 +96,6 @@
     ./deluge
     ./filebrowser
     ./glance
-    ./headscale
     ./homepage
     ./immich
     ./jellyfin
@@ -100,7 +106,9 @@
     ./sabnzbd
     #./searxng
     ./slskd
-    ./szurubooru
+    #./szurubooru
     ./vaultwarden
+    ./vpn/headscale
+    ./vpn/tailscale
   ];
 }

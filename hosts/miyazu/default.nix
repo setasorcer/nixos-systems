@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   sv = config.server;
@@ -29,6 +29,7 @@ in
     enable = true;
     dns-refresh.enable = true;
     baseDomain = "setasorcer.xyz";
+    internalDomain = "yarara.void";
     localDomain = "192.168.1.75";
     dataDir = "/mnt/zichi";
 
@@ -43,7 +44,7 @@ in
         port = 8989;
       };
       deluge = {
-        enable = true;
+        enable = false;
         port = 8112;
       };
       filebrowser = {
@@ -53,10 +54,6 @@ in
       glance = {
         enable = true;
         port = 8087;
-      };
-      headscale = {
-        enable = true;
-        port = 8085;
       };
       homepage-dashboard = {
         enable = true;
@@ -94,13 +91,17 @@ in
         enable = true;
         port.web = 5030;
       };
-      szurubooru = {
-        enable = true;
-        port = 8086;
-      };
       vaultwarden = {
         enable = true;
         port = 8222;
+      };
+      headscale = {
+        enable = true;
+        port = 8085;
+      };
+      tailscale = {
+        enable = true;
+        port = 41641;
       };
     };
   };
