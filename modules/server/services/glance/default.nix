@@ -22,9 +22,14 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
+      environmentFile = config.sops.secrets.glance-env.path;
 
       settings = {
         server.port = cfg.port;
+        auth = {
+          secret-key = "\${GLANCE_SECRET_KEY}";
+          users.admin.password = "\${GLANCE_USER_PASSWORD}";
+        };
         pages = [
           {
             name = "Home";

@@ -33,6 +33,12 @@
     mode = "0400";
     restartUnits = [ "namecheap-ddns.service" ];
   };
+  sops.secrets.glance-env = {
+    owner = "root";
+    group = "root";
+    mode = "0400";
+    restartUnits = [ "glance.service" ]; # Restart slskd if secrets change
+  };
   #sops.secrets.szurubooru-secret = {
   #  owner = "szurubooru";
   #  group = "szurubooru";
