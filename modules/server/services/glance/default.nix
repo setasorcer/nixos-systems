@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ host, config, lib, ... }:
 
 let
   service = "glance";
@@ -35,45 +35,93 @@ in
                 size = "small";
                 widgets = [
                   {
-                    type = "calendar";
-                    first-day-of-week = "monday";
-                  }
-                  {
-                    type = "rss";
-                    limit = 10;
-                    collapse-after = 3;
-                    cache = "12h";
-                    feeds = [
+                    type = "server-stats";
+                    servers = [
                       {
-                        url = "https://selfh.st/rss/";
-                        title = "selfh.st";
-                        limit = 4;
-                      }
-                      {
-                        url = "https://ciechanow.ski/atom.xml";
-                      }
-                      {
-                        url = "https://www.joshwcomeau.com/rss.xml";
-                        title = "Josh Comeau";
-                      }
-                      {
-                        url = "https://samwho.dev/rss.xml";
-                      }
-                      {
-                        url = "https://ishadeed.com/feed.xml";
-                        title = "Ahmad Shadeed";
+                        type = "local";
+                        name = "${host}";
+                        hide-mountpoints-by-default = true;
+                        mountpoints = {
+                          "/".hide = false;
+                          "${server.dataDir}".hide = false;
+                        };
                       }
                     ];
                   }
                   {
-                    type = "twitch-channels";
-                    channels = [
-                      "theprimeagen"
-                      "j_blow"
-                      "giantwaffle"
-                      "cohhcarnage"
-                      "christitustech"
-                      "EJ_SA"
+                    type = "monitor";
+                    cache = "1m";
+                    title = "Entertainment";
+                    sites = [
+                      {
+                        title = "Jellyfin";
+                        url = "https://${server.services.jellyfin.url}";
+                        icon = "di:jellyfin";
+                      }
+                      {
+                        title = "Audiobookshelf";
+                        url = "http://${server.services.audiobookshelf.url}";
+                        icon = "di:audiobookshelf";
+                      }
+                      {
+                        title = "Komga";
+                        url = "http://${server.services.komga.url}";
+                        icon = "di:komga";
+                      }
+                    ];
+                  }
+                  {
+                    type = "monitor";
+                    cache = "1m";
+                    title = "Storage";
+                    sites = [
+                      {
+                        title = "Memos";
+                        url = "https://${server.services.memos.url}";
+                        icon = "di:memos";
+                      }
+                      {
+                        title = "File Browser";
+                        url = "http://${server.services.filebrowser.url}";
+                        icon = "di:filebrowser";
+                      }
+                      {
+                        title = "Immich";
+                        url = "http://${server.services.immich.url}";
+                        icon = "di:immich";
+                      }
+                      {
+                        title = "Vaultwarden";
+                        url = "https://${server.services.vaultwarden.url}";
+                        icon = "di:vaultwarden";
+                      }
+                    ];
+                  }
+                  {
+                    type = "monitor";
+                    cache = "1m";
+                    title = "File Sharing";
+                    sites = [
+                      {
+                        title = "Radarr";
+                        url = "http://${server.services.radarr.url}";
+                        icon = "di:radarr";
+                      }
+                      {
+                        title = "Sonarr";
+                        url = "http://${server.services.sonarr.url}";
+                        icon = "di:sonarr";
+                      }
+                      {
+                        title = "Sabnzbd";
+                        url = "http://${server.services.sabnzbd.url}";
+                        icon = "di:sabnzbd";
+                      }
+                      {
+                        title = "Slskd";
+                        url = "http://${server.services.slskd.url}";
+                        icon = "di:slskd";
+                      }
                     ];
                   }
                 ];
@@ -82,35 +130,41 @@ in
                 size = "full";
                 widgets = [
                   {
-                    type = "group";
-                    widgets = [
-                      { type = "hacker-news"; }
-                      { type = "lobsters"; }
+                    type = "videos";
+                    include-shorts = true;
+                    channels = [
+                      "UCMMYpCFKYv0q8jQO53-vs1g"  # ADOCLIPS
+                      "UCYZtp0YIxYOipX15v_h_jnA"  # Crowbcat
+                      "UC7Ucs42FZy3uYzjrqzOIHsw"  # EmpLemon
+                      "UC2_krAagEXVPftDXZCDiVZA"  # Kaname Naito
+                      "UCXZ0aTkZAQGS4fgD1jvG2gg"  # kettletoro
+                      "UCiWd1l8UQaz9_LKw7RT8JOQ"  # kettleuma
+                      "UC4KZhRZ2iYC9Jnjx2jxHPdQ"  # murau
                     ];
                   }
                   {
                     type = "videos";
+                    style = "grid-cards";
+                    collapse-after-rows = 3;
                     channels = [
-                      "UCXuqSBlHAE6Xw-yeJA0Tunw"  # Linus Tech Tips
+                      "UCRYeRa2iUMd8An1WTPIP2bw"  # aChair Leg
+                      "UCWFNUk2LHUQdRzQcJLYZmcg"  # Bringus Studios
+                      "UCDXpP3bwWjhjBRdCP-5mNVg"  # Daihuku Keyboard
                       "UCR-DXc1voovS8nhAvccRZhg"  # Jeff Geerling
-                      "UCsBjURrPoezykLs9EqgamOA"  # Fireship
+                      "UCJXa3_WNNmIpewOtCHf3B0g"  # LaurieWired
+                      "UCXuqSBlHAE6Xw-yeJA0Tunw"  # Linus Tech Tips
                       "UCBJycsmduvYEL83R_U4JriQ"  # Marques Brownlee
+                      "UC7YOGHUfC1Tb6E4pudI9STA"  # Mental Outlaw
+                      "UCRjUOplWHoZ7zfl9ZVHgIVA"  # Milktooth
                       "UCHnyfMqiRRG1u-2MsSQLbXA"  # Veritasium
+                      "UC_zBdZ0_H_jn41FDRG7q4Tw"  # Vimjoyer
                     ];
                   }
                   {
                     type = "group";
                     widgets = [
-                      {
-                        type = "reddit";
-                        subreddit = "technology";
-                        show-thumbnails = true;
-                      }
-                      {
-                        type = "reddit";
-                        subreddit = "selfhosted";
-                        show-thumbnails = true;
-                      }
+                      { type = "hacker-news"; }
+                      { type = "lobsters"; }
                     ];
                   }
                 ];
@@ -119,31 +173,27 @@ in
                 size = "small";
                 widgets = [
                   {
-                    type = "markets";
-                    markets = [
+                    type = "rss";
+                    limit = 10;
+                    collapse-after = -1;
+                    cache = "12h";
+                    feeds = [
                       {
-                        symbol = "SPY";
-                        name = "S&P 500";
+                        url = "https://discourse.nixos.org/c/announcements/8.rss";
+                        title = "NixOS Announcements";
                       }
                       {
-                        symbol = "BTC-USD";
-                        name = "Bitcoin";
+                        url = "https://store.steampowered.com/feeds/news/group/45479024/?cc=US&l=english";
+                        title = "Steam Hardware";
                       }
                       {
-                        symbol = "NVDA";
-                        name = "NVIDIA";
-                      }
-                      {
-                        symbol = "AAPL";
-                        name = "Apple";
-                      }
-                      {
-                        symbol = "MSFT";
-                        name = "Microsoft";
+                        url = "https://selfh.st/rss/";
+                        title = "selfh.st";
+                        limit = 4;
                       }
                     ];
                   }
-                  {
+                  /*{
                     type = "releases";
                     cache = "1d";
                     # token = "...";  # Optional: add GitHub token if needed
@@ -153,7 +203,7 @@ in
                       "immich-app/immich"
                       "syncthing/syncthing"
                     ];
-                  }
+                  }*/
                 ];
               }
             ];
