@@ -56,7 +56,7 @@ in
         port = 8087;
       };
       homepage-dashboard = {
-        enable = true;
+        enable = false;
         port = 8082;
       };
       immich = {
@@ -80,7 +80,7 @@ in
         port = 5230;
       };
       miniflux = {
-        enable = true;
+        enable = false;
         port = 8081;
       };
       sabnzbd = {

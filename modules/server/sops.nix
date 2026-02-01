@@ -14,13 +14,13 @@
     mode = "0400"; # Only slskd can read this file
     restartUnits = [ "slskd.service" ]; # Restart slskd if secrets change
   };
-  sops.secrets.miniflux-admin-credentials = {
+  /*sops.secrets.miniflux-admin-credentials = {
     owner = "miniflux";
     group = "miniflux";
     path = "/var/lib/miniflux/admin-credentials";
     mode = "0400";
     restartUnits = [ "miniflux.service" ];
-  };
+  };*/
   /*sops.secrets.searxng-secret = {
     owner = "searx";
     group = "searx";

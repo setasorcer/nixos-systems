@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.baseDomain}";
+      default = server.baseDomain;
     };
     port = lib.mkOption {
       type = lib.types.int;
