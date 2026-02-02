@@ -100,7 +100,7 @@ in
                 {
                     "customFont": "",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "HH mm - dd MM ddd",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
@@ -360,7 +360,7 @@ in
         "enableShadows": true,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
-        "language": "",
+        "language": "ja",
         "lockOnSuspend": true,
         "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,

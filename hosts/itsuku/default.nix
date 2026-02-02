@@ -55,4 +55,5 @@
     nexusmods-app-unfree
     kdePackages.kdenlive
   ];
+  services.flatpak.enable = true;
 }
