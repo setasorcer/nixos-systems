@@ -135,7 +135,8 @@ in
     
     "Shift+Print".action.screenshot = [ ];
     "Print".action.screenshot-screen = [ ];
-    "Mod+Print".action.screenshot-window = [ ];
+    #"Mod+Print".action.screenshot-window = [ ];
+    "Mod+Print".action.spawn = noctalia "plugin:screen-recorder toggle";
     
     "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
     "Mod+Escape".allow-inhibiting = false;

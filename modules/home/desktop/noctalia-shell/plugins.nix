@@ -30,11 +30,11 @@
       };
       screen-recorder = {
         directory = "${config.home.homeDirectory}/pix/snaps";
-        filenamePattern = "yyyy-MM-dd_recording_HHmmss_niri";
+        filenamePattern = "yyyy-MM-dd-HHmmss_niri";
         frameRate = 30;
         audioCodec = "opus";
         videoCodec = "h264";
-        quality = "medium";
+        quality = "very_high";
         colorRange = "limited";
         showCursor = true;
         copyToClipboard = true;
