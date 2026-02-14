@@ -18,27 +18,19 @@
       default = {
         ids = [ "*" "-cb10:1556" ];
         settings.main = {
-          capslock = "overload(control,esc)";
-          esc = "capslock";
-          pause = "esc";
-          sysrq = "overload(meta,sysrq)";
+          capslock = "overload(control,esc)"; # Caps lock -> LCTL on hold, ESC on tap
+          esc = "capslock"; # ESC -> Caps lock
+          pause = "esc"; # I believe this setting comes from a T430 setup
+          sysrq = "overload(meta,sysrq)"; # Print screen -> GUI on hold, Print screen on tap
+          # Designed with a ThinkPad T480 in mind
         };
         settings.global = {
-          overload_tap_timeout = 175;
+          overload_tap_timeout = 175; # Faster timeout (default 200)
         };
       };
-      lily58 = {
+      # No configuration for my Iris CE (for now)
+      "iris-ce" = {
         ids = [ "cb10:1556" ];
-        settings.meta = {
-          m = "M-h";
-          n = "M-j";
-          e = "M-k";
-          i = "M-l";
-          h = "M-m";
-          j = "M-n";
-          k = "M-e";
-          l = "M-i";
-        };
       };
     };
   };

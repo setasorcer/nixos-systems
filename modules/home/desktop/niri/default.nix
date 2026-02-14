@@ -76,7 +76,7 @@
           default-column-width.proportion = 2.0 / 3.0;
 	}
 	{
-          matches = [{ app-id = "vesktop"; title = "^Discord.*$"; }];
+          matches = [{ app-id = "vesktop"; title = ".*Discord.*$"; }];
           default-column-width.proportion = 1.0 / 3.0;
 	}
         {

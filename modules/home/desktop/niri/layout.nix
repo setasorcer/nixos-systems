@@ -10,18 +10,10 @@
         "eDP-2" = {
           variable-refresh-rate = true;
           scale = 1.25;
-          position.x = cfg."DP-4".mode.width / 10;
-          position.y = cfg."DP-4".mode.height;
+          position.x = cfg."DP-3".mode.width / 10;
+          position.y = cfg."DP-3".mode.height;
         };
         "DP-3" = {
-          mode = {
-            width = 2560;
-            height = 1440;
-          };
-          position.x = 0;
-          position.y = 0;
-        };
-        "DP-4" = {
           mode = {
             width = 2560;
             height = 1440;
