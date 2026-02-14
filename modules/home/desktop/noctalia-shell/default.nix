@@ -385,6 +385,9 @@ in
         "session": "",
         "wallpaperChange": ""
     },
+    "plugins": {
+      "autoUpdate": true
+    },
     "location": {
         "analogClockInCalendar": true,
         "firstDayOfWeek": 0,
@@ -507,7 +510,7 @@ in
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 41,
+    "settingsVersion": 40,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,

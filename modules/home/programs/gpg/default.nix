@@ -10,4 +10,5 @@
     pinentry.package = pkgs.pinentry-gnome3;
   };
   services.polkit-gnome.enable = true;
+  home.packages = with pkgs; [ rbw pinentry-gnome3 ];
 }

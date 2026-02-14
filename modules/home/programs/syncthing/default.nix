@@ -2,7 +2,7 @@
 
 {
   services.syncthing = {
-    enable = true;
+    enable = false;
     settings = {
         devices = {
           "droid" = { id = "T3XFMZZ-BVLSDLN-ZHH3WRO-WL35HXD-5WCXVWV-6OSJMNQ-LNCL5MG-GIWCFA3"; };
