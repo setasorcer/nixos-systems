@@ -38,6 +38,7 @@
 
     # Sound/music tools
     jellyfin-tui
+    opencloud-desktop
     picard
     rsgain # needed by picard
     pulsemixer
