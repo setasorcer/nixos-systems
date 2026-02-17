@@ -25,6 +25,9 @@
                 },
                 "separator": "-"
             }
+            "blacklist": {
+              "libraries": ["Books"]
+            }
         },
         "discord": {
             "application_id": "1053747938519679018",
