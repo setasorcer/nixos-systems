@@ -35,7 +35,7 @@
     virtualisation.enable = true;
     games = {
       steam.enable = true;
-      aagl.enable = true;
+      #aagl.enable = true;
       retroarch = {
         enable = true;
         cores = [
@@ -52,7 +52,7 @@
   environment.systemPackages = with pkgs; [
     anki-bin
     prismlauncher
-    nexusmods-app-unfree
+    #nexusmods-app-unfree
     kdePackages.kdenlive
   ];
 }
