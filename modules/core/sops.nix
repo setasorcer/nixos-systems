@@ -24,7 +24,7 @@
                     "image_text": "{album}"
                 },
                 "separator": "-"
-            }
+            },
             "blacklist": {
               "libraries": ["Books"]
             }
