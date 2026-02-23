@@ -4,10 +4,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.inconsolata
     aileron
-    # CJK Fonts
-    ipaexfont
-    baekmuk-ttf
-    wqy_microhei
+    noto-fonts-cjk-sans
   ];
 
   stylix = {
