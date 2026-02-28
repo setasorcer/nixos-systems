@@ -13,6 +13,7 @@ in
       qemu
       virtio-win
       dnsmasq
+      virtiofsd
     ];
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
