@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # Disable some desktop entries to tidy up the launcher
   xdg.desktopEntries = {
     "org.fcitx.fcitx5-migrator" = {
       name = "Fcitx5 Migration Wizard";
