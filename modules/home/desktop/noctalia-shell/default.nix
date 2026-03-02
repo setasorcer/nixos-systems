@@ -295,7 +295,7 @@ in
         "gridSnap": true,
         "monitorWidgets": [
             {
-                "name": "DP-3",
+                "name": "DP-1",
                 "widgets": [
                     {
                         "hideMode": "idle",
