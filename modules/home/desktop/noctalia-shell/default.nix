@@ -567,6 +567,8 @@ in
         "monitorDirectories": [
         ],
         "overviewEnabled": true,
+        "overviewBlur": 1.0,
+        "overviewTint": 0.6,
         "panelPosition": "follow_bar",
         "randomEnabled": false,
         "randomIntervalSec": 300,
