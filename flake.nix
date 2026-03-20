@@ -62,13 +62,6 @@
           inherit self inputs username;
         };
       };
-      teppei = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/teppei ];
-        specialArgs = {
-          host = "teppei";
-          inherit self inputs username;
-        };
-      };
       midori = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts/midori ];
         specialArgs = {

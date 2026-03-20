@@ -142,7 +142,7 @@ in
     "Mod+Escape".allow-inhibiting = false;
     
     "XF86Tools".action = power-off-monitors;
-    "XF86Favorites".action = power-off-monitors;
+    "XF86AudioMedia".action = power-off-monitors;
     "Shift+F12".action = power-off-monitors;
   };
 }
