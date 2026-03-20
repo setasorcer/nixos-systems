@@ -1,17 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Ability to move directories within terminal
-  programs.fish.functions = {
-    y = ''
-      set tmp (mktemp -t "yazi-cwd.XXXXXX")
-      yazi $argv --cwd-file="$tmp"
-      if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-      end
-      rm -f -- "$tmp"
-    '';
-  };
   # lf accessories
   home.packages = with pkgs; [
     dragon-drop # Drag and drop with dragon
@@ -28,6 +17,7 @@
   programs.yazi = {
     enable = true;
     initLua = ./init.lua;
+    shellWrapperName = "y";
     settings = {
       mgr = {
         show_symlink = false;
