@@ -7,6 +7,10 @@
         cfg = config.programs.niri.settings.outputs;
       in
       {
+        "eDP-1" = {
+          variable-refresh-rate = true;
+          scale = 1;
+        };
         "eDP-2" = {
           variable-refresh-rate = true;
           scale = 1.25;

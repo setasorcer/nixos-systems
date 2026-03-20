@@ -69,6 +69,13 @@
           inherit self inputs username;
         };
       };
+      midori = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/midori ];
+        specialArgs = {
+          host = "midori";
+          inherit self inputs username;
+        };
+      };
     };
   };
 }
