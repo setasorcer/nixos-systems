@@ -16,7 +16,8 @@
     enable = true;
     keyboards = {
       default = {
-        ids = [ "*" "-cb10:1556" ];
+        ids = [ "*" "-cb10:1556" "-369b:0051" ];
+
         settings.main = {
           capslock = "overload(control,esc)"; # Caps lock -> LCTL on hold, ESC on tap
           esc = "capslock"; # ESC -> Caps lock
@@ -31,6 +32,9 @@
       # No configuration for my Iris CE (for now)
       "iris-ce" = {
         ids = [ "cb10:1556" ];
+      };
+      "record-alice" = {
+        ids = [ "369b:0051" ];
       };
     };
   };
