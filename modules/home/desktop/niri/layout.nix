@@ -10,6 +10,10 @@
         "eDP-1" = {
           variable-refresh-rate = true;
           scale = 1;
+          mode = {
+            width = 1920;
+            height = 1200;
+          };
         };
         "eDP-2" = {
           variable-refresh-rate = true;

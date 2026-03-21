@@ -2,6 +2,18 @@
 
 let
   region = "Honolulu";
+  
+  rx = 440.0 / 2560.0;
+  ry = 120.0 / 1440.0;
+
+  DP-1 = {
+    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.width * (1 - rx));
+    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.height * (1 - ry));
+  };
+  eDP-1 = {
+    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.width * (1 - rx));
+    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.height * (1 - ry));
+  };
 in
 {
   imports = [
@@ -306,8 +318,8 @@ in
                         "showButtons": false,
                         "showVisualizer": true,
                         "visualizerType": "linear",
-                        "x": 2120,
-                        "y": 1320
+                        "x": ${toString DP-1.widgetPositionX},
+                        "y": ${toString DP-1.widgetPositionY}
                     }
                 ]
             },
@@ -323,8 +335,8 @@ in
                         "showButtons": false,
                         "showVisualizer": true,
                         "visualizerType": "linear",
-                        "x": 1500,
-                        "y": 980
+                        "x": ${toString eDP-1.widgetPositionX},
+                        "y": ${toString eDP-1.widgetPositionY}
                     }
                 ]
             }
