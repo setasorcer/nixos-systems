@@ -30,6 +30,10 @@
           click-method = "clickfinger";
         };
 
+        tablet = {
+          map-to-output = "eDP-1";
+        };
+
         mouse = {
           accel-profile = "flat";
         };
