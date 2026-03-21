@@ -19,7 +19,7 @@
         };
         "DP-1" = {
           mode = {
-            width = 2560;
+            width = 3440;
             height = 1440;
           };
           position.x = 0;
