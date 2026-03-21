@@ -3,16 +3,13 @@
 let
   region = "Honolulu";
   
-  rx = 440.0 / 2560.0;
-  ry = 120.0 / 1440.0;
-
   DP-1 = {
-    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.width * (1 - rx));
-    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.height * (1 - ry));
+    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.width - 440);
+    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."DP-1".mode.height - 120);
   };
   eDP-1 = {
-    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.width * (1 - rx));
-    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.height * (1 - ry));
+    widgetPositionX = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.width - 440);
+    widgetPositionY = builtins.floor (config.programs.niri.settings.outputs."eDP-1".mode.height - 120);
   };
 in
 {
