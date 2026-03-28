@@ -33,7 +33,6 @@
     # Compilation/coding
     gnumake
     libgcc
-    qmk
     sops
 
     # Sound/music tools

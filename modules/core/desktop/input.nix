@@ -11,12 +11,14 @@
     };
   };
 
+  programs.bazecor.enable = true;
+
   # Keyd
   services.keyd = {
     enable = true;
     keyboards = {
       default = {
-        ids = [ "*" "-cb10:1556" "-369b:0051" ];
+        ids = [ "*" "-cb10:1556" "-35ef:0010" ];
 
         settings.main = {
           capslock = "overload(control,esc)"; # Caps lock -> LCTL on hold, ESC on tap
@@ -33,8 +35,8 @@
       "iris-ce" = {
         ids = [ "cb10:1556" ];
       };
-      "record-alice" = {
-        ids = [ "369b:0051" ];
+      "dygma-defy" = {
+        ids = [ "35ef:0010" ];
       };
     };
   };
