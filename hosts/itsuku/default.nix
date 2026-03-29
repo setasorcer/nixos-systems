@@ -19,13 +19,6 @@
       "nofail"
     ];
   };
- 
-  # Power saving
-  #networking.networkmanager.wifi.powersave = true;
-  services.udev.extraRules = ''
-  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver"
-  SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="1",RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance"
-  '';
 
   # Framework-specific
   services.fwupd.enable = true;
@@ -55,4 +48,7 @@
     #nexusmods-app-unfree
     kdePackages.kdenlive
   ];
+  environment.sessionVariables = { 
+    DRI_PRIME = "1002:7480"; # Prioritise dGPU over iGPU
+  };
 }

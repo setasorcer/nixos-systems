@@ -23,6 +23,8 @@ in
     "Mod+Alt+L".repeat = false;
     "Mod+N".action.spawn = noctalia "notifications toggleHistory";
     "Mod+N".repeat = false;
+    "Mod+Shift+N".action.spawn = noctalia "notifications dismissAll";
+    "Mod+Shift+N".repeat = false;
     "Mod+B".action.spawn = noctalia "controlCenter toggle";
     "Mod+B".repeat = false;
     
