@@ -23,7 +23,8 @@
                     "state_text": "{artists}",
                     "image_text": "{album}"
                 },
-                "separator": "-"
+                "separator": "-",
+                "status_display_type": "details"
             },
             "blacklist": {
               "libraries": ["Books"]
