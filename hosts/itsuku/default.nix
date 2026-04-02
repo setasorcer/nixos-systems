@@ -51,4 +51,5 @@
   environment.sessionVariables = { 
     DRI_PRIME = "1002:7480"; # Prioritise dGPU over iGPU
   };
+  boot.kernelModules = [ "ntsync" ]; # Enable NTSync
 }
