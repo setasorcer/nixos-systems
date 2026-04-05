@@ -19,6 +19,7 @@
 
   services.power-profiles-daemon.enable = true;
   services.iio-niri.enable = true;
+  programs.bazecor.enable = lib.mkForce false;
 
   environment.systemPackages = with pkgs; [ krita ];
 
