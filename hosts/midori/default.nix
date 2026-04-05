@@ -24,7 +24,6 @@
   environment.systemPackages = with pkgs; [ krita ];
 
   desktop = {
-    virtualisation.enable = true;
     games = {
       steam.enable = true;
       retroarch = {
