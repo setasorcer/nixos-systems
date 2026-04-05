@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ username, inputs, lib, ... }:
+{ username, inputs, lib, pkgs, ... }:
 
 {
   imports =
@@ -19,6 +19,8 @@
 
   services.power-profiles-daemon.enable = true;
   services.iio-niri.enable = true;
+
+  environment.systemPackages = with pkgs; [ krita ];
 
   desktop = {
     virtualisation.enable = true;
