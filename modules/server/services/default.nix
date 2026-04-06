@@ -94,7 +94,7 @@
     ./arr/radarr
     ./arr/sonarr
     ./deluge
-    ./filebrowser
+    #./filebrowser
     ./glance
     ./homepage
     ./immich
@@ -103,11 +103,13 @@
     ./library/komga
     ./memos
     ./miniflux
+    ./opencloud
     ./sabnzbd
     #./searxng
     ./slskd
     #./szurubooru
     ./vaultwarden
+    ./vikunja
     ./vpn/headscale
     ./vpn/tailscale
   ];

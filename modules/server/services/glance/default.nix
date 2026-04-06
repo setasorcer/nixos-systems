@@ -63,7 +63,7 @@ in
                         url = "https://${server.services.jellyfin.url}";
                         icon = "di:jellyfin";
                       }
-                      {
+                      /*{
                         title = "Audiobookshelf";
                         url = "http://${server.services.audiobookshelf.url}";
                         icon = "di:audiobookshelf";
@@ -72,7 +72,7 @@ in
                         title = "Komga";
                         url = "http://${server.services.komga.url}";
                         icon = "di:komga";
-                      }
+                      }*/
                     ];
                   }
                   {
@@ -85,10 +85,15 @@ in
                         url = "https://${server.services.memos.url}";
                         icon = "di:memos";
                       }
-                      {
+                      /*{
                         title = "File Browser";
                         url = "http://${server.services.filebrowser.url}";
                         icon = "di:filebrowser";
+                      }*/
+                      {
+                        title = "Opencloud";
+                        url = "https://${server.services.opencloud.url}";
+                        icon = "di:open-cloud";
                       }
                       {
                         title = "Immich";
@@ -100,12 +105,17 @@ in
                         url = "https://${server.services.vaultwarden.url}";
                         icon = "di:vaultwarden";
                       }
+                      {
+                        title = "Vikunja";
+                        url = "https://${server.services.vikunja.url}";
+                        icon = "di:vikunja";
+                      }
                     ];
                   }
                   {
                     type = "monitor";
                     cache = "1m";
-                    title = "File Sharing";
+                    title = "Media Fetchers";
                     sites = [
                       {
                         title = "Radarr";

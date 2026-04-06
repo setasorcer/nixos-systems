@@ -47,10 +47,6 @@ in
         enable = false;
         port = 8112;
       };
-      filebrowser = {
-        enable = true;
-        port = 8089;
-      };
       glance = {
         enable = true;
         port = 8087;
@@ -68,11 +64,11 @@ in
         port = 8096;
       };
       audiobookshelf = {
-        enable = true;
+        enable = false;
         port = 8000;
       };
       komga = {
-        enable = true;
+        enable = false;
         port = 8088;
       };
       memos = {
@@ -82,6 +78,10 @@ in
       miniflux = {
         enable = false;
         port = 8081;
+      };
+      opencloud = {
+        enable = true;
+        port = 9200;
       };
       sabnzbd = {
         enable = true;
@@ -94,6 +94,10 @@ in
       vaultwarden = {
         enable = true;
         port = 8222;
+      };
+      vikunja = {
+        enable = true;
+        port = 3456;
       };
       headscale = {
         enable = true;

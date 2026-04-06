@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  service = "audiobookshelf";
+  service = "vikunja";
   cfg = config.server.services.${service};
   server = config.server;
 in
@@ -12,19 +12,27 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "vikunja.${server.baseDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
-      default = 8000;
+      default = 3456;
     };
   };
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
-      host = "0.0.0.0";
-      port = cfg.port;
+      settings = {
+        service.enableregistration = false;
+      };
+      #database.path = "${server.dataDir}/media/tasks";
+      frontendScheme = "https";
+      frontendHostname = cfg.url;
     };
+    services.caddy.virtualHosts."${cfg.url}" = {
+      extraConfig = ''
+        reverse_proxy localhost:${toString cfg.port}
+      '';
+    };  
   };
 }
