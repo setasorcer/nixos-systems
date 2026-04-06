@@ -94,18 +94,12 @@
     ./arr/radarr
     ./arr/sonarr
     ./deluge
-    #./filebrowser
     ./glance
-    ./homepage
     ./immich
     ./jellyfin
-    ./library/audiobookshelf
-    ./library/komga
     ./memos
-    ./miniflux
     ./opencloud
     ./sabnzbd
-    #./searxng
     ./slskd
     #./szurubooru
     ./vaultwarden

@@ -51,10 +51,6 @@ in
         enable = true;
         port = 8087;
       };
-      homepage-dashboard = {
-        enable = false;
-        port = 8082;
-      };
       immich = {
         enable = true;
         port = 2283;
@@ -63,21 +59,9 @@ in
         enable = true;
         port = 8096;
       };
-      audiobookshelf = {
-        enable = false;
-        port = 8000;
-      };
-      komga = {
-        enable = false;
-        port = 8088;
-      };
       memos = {
         enable = true;
         port = 5230;
-      };
-      miniflux = {
-        enable = false;
-        port = 8081;
       };
       opencloud = {
         enable = true;
