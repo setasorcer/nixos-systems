@@ -43,6 +43,10 @@ in
         enable = true;
         port = 8989;
       };
+      seerr = {
+        enable = true;
+        port = 5055;
+      };
       deluge = {
         enable = false;
         port = 8112;

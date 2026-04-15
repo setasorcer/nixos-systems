@@ -93,6 +93,7 @@
   imports = [
     ./arr/radarr
     ./arr/sonarr
+    ./arr/seerr
     ./deluge
     ./glance
     ./immich

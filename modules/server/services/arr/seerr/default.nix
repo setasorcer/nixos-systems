@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  service = "immich";
+  service = "seerr";
   cfg = config.server.services.${service};
   server = config.server;
 in
@@ -16,18 +16,15 @@ in
     };
     port = lib.mkOption {
       type = lib.types.int;
-      default = 2283;
+      default = 5055;
     };
   };
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
       openFirewall = true;
-      host = "0.0.0.0";
       port = cfg.port;
-      mediaLocation = "${server.dataDir}/immich";
-      accelerationDevices = [ "/dev/dri/renderD128" ];
     };
-    users.users.${service}.extraGroups = [ "video" "render" ];
+    #users.users.${service}.extraGroups = [ "kyoka" "sabnzbd" ];
   };
 }

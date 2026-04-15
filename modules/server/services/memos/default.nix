@@ -1,4 +1,4 @@
-{ config, lib, pkgsUnstable, ... }:
+{ config, lib, ... }:
 
 let
   service = "memos";
@@ -22,7 +22,6 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      package = pkgsUnstable.${service};
       settings = {
         MEMOS_MODE = "prod";
         MEMOS_ADDR = "127.0.0.1";

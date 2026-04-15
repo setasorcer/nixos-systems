@@ -128,6 +128,11 @@ in
                         icon = "di:sonarr";
                       }
                       {
+                        title = "Seerr";
+                        url = "http://${server.services.seerr.url}";
+                        icon = "di:seerr";
+                      }
+                      {
                         title = "Sabnzbd";
                         url = "http://${server.services.sabnzbd.url}";
                         icon = "di:sabnzbd";
