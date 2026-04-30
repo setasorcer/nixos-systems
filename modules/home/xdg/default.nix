@@ -13,6 +13,7 @@
       download = "${config.home.homeDirectory}";
       music = "${config.home.homeDirectory}/music";
       pictures = "${config.home.homeDirectory}/pix";
+      projects = "${config.home.homeDirectory}/dox/projects";
       publicShare = "${config.home.homeDirectory}/dox/send";
       templates = null;
       videos = "${config.home.homeDirectory}/vid";

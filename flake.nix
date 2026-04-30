@@ -3,8 +3,8 @@
 
   # Cachix
   nixConfig = {
-    extra-substituters = [ "https://ezkea.cachix.org" ];
-    extra-trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
+    extra-substituters = [ "https://ezkea.cachix.org" "https://noctalia.cachix.org" ];
+    extra-trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
   };
 
   inputs = {

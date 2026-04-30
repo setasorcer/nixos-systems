@@ -7,7 +7,7 @@
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri = {
     enable = true;
-    package = pkgs.niri-stable;
+    package = pkgs.niri;
   };
   # Greeter - COSMIC
   services.displayManager.cosmic-greeter.enable = true;

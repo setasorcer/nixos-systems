@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 
 {
   imports = [ 
@@ -13,6 +13,7 @@
         { argv = ["systemctl" "--user" "reset-failed" "waybar.service"]; }
         { argv = ["awww-daemon"]; }
         { argv = ["awww-daemon" "--namespace" "blur"]; }
+        { argv = ["noctalia-shell"]; }
       ];
 
       input = {
