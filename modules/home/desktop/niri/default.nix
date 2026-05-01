@@ -46,11 +46,6 @@
         };
       };
 
-      switch-events = {
-        tablet-mode-on.action.spawn = [ "niri" "msg" "output" "eDP-1" "transform" "180" ];
-        tablet-mode-off.action.spawn = [ "niri" "msg" "output" "eDP-1" "transform" "normal" ];
-      };
-
       cursor.hide-after-inactive-ms = 3000;
       hotkey-overlay.skip-at-startup = true;
       screenshot-path = "~/pix/snaps/%Y-%m-%d-%H%M%S_niri.png";
