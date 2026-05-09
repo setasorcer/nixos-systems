@@ -26,6 +26,12 @@
       dark = "adwaita-dark";
     };
   };
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = lib.mkForce pkgs.adwaita-icon-theme;
+      name = lib.mkForce "Adwaita";
+    };
+  };
 
 }

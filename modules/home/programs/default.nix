@@ -29,6 +29,7 @@
     yt-dlp
     gpu-screen-recorder
     qbittorrent
+    image-roll
 
     # Compilation/coding
     gnumake
