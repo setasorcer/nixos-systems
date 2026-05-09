@@ -37,6 +37,7 @@
 
     # Sound/music tools
     jellyfin-tui
+    jellyfin-mpv-shim
     opencloud-desktop
     picard
     rsgain # needed by picard
