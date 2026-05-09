@@ -21,7 +21,7 @@
   services.iio-niri.enable = true;
   programs.bazecor.enable = lib.mkForce false;
 
-  environment.systemPackages = with pkgs; [ krita ];
+  environment.systemPackages = with pkgs; [ krita ruffle ];
 
   desktop = {
     games = {
