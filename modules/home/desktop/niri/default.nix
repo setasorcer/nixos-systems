@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ lib, inputs, pkgs, ... }:
 
 {
   imports = [ 
@@ -6,9 +6,16 @@
     ./binds.nix
     ./layout.nix
   ];
-  programs.niri = {
+  programs.niri = 
+    let
+      niriPkgs = inputs.niri-pkgs.packages.${pkgs.stdenv.hostPlatform.system};
+    in
+  {
     enable = true;
+    package = niriPkgs.niri-unstable;
     settings = {
+      xwayland-satellite.path = lib.getExe niriPkgs.xwayland-satellite-unstable;
+      includes = lib.mkAfter [(./blur.kdl)];
       spawn-at-startup = [
         { argv = ["systemctl" "--user" "reset-failed" "waybar.service"]; }
         { argv = ["awww-daemon"]; }
@@ -40,10 +47,6 @@
         };
 
         warp-mouse-to-focus.enable = true;
-        focus-follows-mouse = {
-          enable = false;
-          max-scroll-amount = "95%";
-        };
       };
 
       cursor.hide-after-inactive-ms = 3000;
