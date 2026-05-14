@@ -2,7 +2,7 @@
 
 {
 
-  #home.packages = [ pkgs.swayimg ];
+  home.packages = [ pkgs.swayimg ];
   home.file.".config/swayimg/config".text = ''
     # Swayimg configuration file.
     # vim: filetype=dosini

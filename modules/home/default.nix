@@ -13,5 +13,5 @@
     BROWSER = "floorp";
     TERMINAL = "foot";
   };
-  home.file.".face".source = ./../../papes/avatar.jpg;
+  home.file.".face".source = ./../../avatar.jpg;
 }

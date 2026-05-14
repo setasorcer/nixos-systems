@@ -19,6 +19,13 @@ in
       programs.anime-game-launcher.enable = true;
     })*/
     (lib.mkIf cfgsteam.enable {
+      nixpkgs.overlays = [
+        (final: prev: {
+          steam = prev.steam.override {
+            extraArgs = "-cef-disable-gpu-compositing";
+          };
+        })   
+      ];
       programs.steam = {
         enable = true;
         remotePlay.openFirewall = true;

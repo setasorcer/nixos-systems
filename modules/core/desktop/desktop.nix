@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ username, pkgs, inputs, ... }:
 
 {
   environment.variables.NIXOS_OZONE_WL = "1";
@@ -11,8 +11,13 @@
     enable = true;
     package = niriPkgs.niri-unstable;
   };
-  # Greeter - COSMIC
-  services.displayManager.cosmic-greeter.enable = true;
+  # Greeter - DankGreeter
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+    configHome = "/home/${username}";
+    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  };
 
   environment.systemPackages = with pkgs; [
     wl-clipboard

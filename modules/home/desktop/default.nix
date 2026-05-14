@@ -3,12 +3,14 @@
 {
   imports = [
     ./niri
+    ./dankmaterialshell
     ./noctalia-shell
   ];
 
   stylix = {
     targets = {
       btop.enable = true;
+      dank-material-shell.enable = true;
       fcitx5.enable = true;
       zen-browser.enable = true;
       zen-browser.profileNames = [ "default" ];

@@ -17,10 +17,7 @@
       xwayland-satellite.path = lib.getExe niriPkgs.xwayland-satellite-unstable;
       includes = lib.mkAfter [(./blur.kdl)];
       spawn-at-startup = [
-        { argv = ["systemctl" "--user" "reset-failed" "waybar.service"]; }
-        { argv = ["awww-daemon"]; }
-        { argv = ["awww-daemon" "--namespace" "blur"]; }
-        { argv = ["noctalia-shell"]; }
+          { argv = ["noctalia-shell"]; }
       ];
 
       input = {
@@ -96,6 +93,10 @@
       layer-rules = [
         {
           matches = [{ namespace = "^noctalia-overview*"; }];
+          place-within-backdrop = true;
+        }
+        {
+          matches = [{ namespace = "^dms:blurwallpaper*"; }];
           place-within-backdrop = true;
         }
       ];

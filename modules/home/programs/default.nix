@@ -8,7 +8,6 @@
     ./mpv
     ./nvim
     ./swayimg
-    ./syncthing
     ./term
     ./vesktop
     ./yazi
@@ -28,8 +27,6 @@
     imagemagick
     yt-dlp
     gpu-screen-recorder
-    qbittorrent
-    image-roll
 
     # Compilation/coding
     gnumake
@@ -40,11 +37,11 @@
     jellyfin-tui
     jellyfin-mpv-shim
     opencloud-desktop
-    picard
-    rsgain # needed by picard
     pulsemixer
 
     # Misc
     hyprpicker
+    accountsservice
+    sgdboop
   ];
 }
