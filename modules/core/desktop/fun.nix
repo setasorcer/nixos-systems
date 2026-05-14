@@ -18,6 +18,7 @@ in
       nix.settings = inputs.aagl.nixConfig; # Set up Cachix
       programs.anime-game-launcher.enable = true;
     })*/
+    # Fixes steam when using xwayland-satellite, whilst still being able to use hwaccel (Although steam client still lags)
     (lib.mkIf cfgsteam.enable {
       nixpkgs.overlays = [
         (final: prev: {
