@@ -19,7 +19,10 @@
 
   services.power-profiles-daemon.enable = true;
   services.iio-niri.enable = true;
-  programs.bazecor.enable = lib.mkForce false;
+  virtualisation.waydroid = {
+    enable = true;
+    package = pkgs.waydroid-nftables;
+  };
 
   environment.systemPackages = with pkgs; [ krita ruffle ];
 

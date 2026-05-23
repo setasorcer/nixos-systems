@@ -11,8 +11,6 @@
     };
   };
 
-  programs.bazecor.enable = true;
-
   # Keyd
   services.keyd = {
     enable = true;

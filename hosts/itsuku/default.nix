@@ -22,6 +22,8 @@
 
   # Framework-specific
   services.fwupd.enable = true;
+  # Desktop-specific
+  programs.bazecor.enable = true;
 
   # Laptop optimizations: battery modules, disable hyprland decorations
   desktop = {
