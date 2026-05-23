@@ -4,6 +4,7 @@
   imports = [
     inputs.dms.homeModules.dank-material-shell
     ./settings.nix
+    ./session.nix
   ];
 
   programs.dank-material-shell = {

@@ -41,7 +41,6 @@
 
     # Misc
     hyprpicker
-    accountsservice
     sgdboop
   ];
 }
