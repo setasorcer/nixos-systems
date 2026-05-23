@@ -34,6 +34,7 @@ in
         localNetworkGameTransfers.openFirewall = true;
         gamescopeSession.enable = true;
         protontricks.enable = true;
+        extraPackages = with pkgs; [ hidapi ];
       };
       programs.gamescope = {
         enable = true;
