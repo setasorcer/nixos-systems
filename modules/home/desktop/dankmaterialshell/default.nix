@@ -3,8 +3,10 @@
 {
   imports = [
     inputs.dms.homeModules.dank-material-shell
+    inputs.dms-plugin-registry.modules.default
     ./settings.nix
     ./session.nix
+    ./plugin.nix
   ];
 
   programs.dank-material-shell = {

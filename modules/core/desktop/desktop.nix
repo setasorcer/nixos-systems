@@ -19,6 +19,7 @@
     package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
   services.accounts-daemon.enable = true; # Stores information like profile picture for DMS
+  programs.dsearch.enable = true;
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
