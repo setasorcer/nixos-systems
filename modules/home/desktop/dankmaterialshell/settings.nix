@@ -262,7 +262,7 @@ programs.dank-material-shell.settings = {
   batterySuspendBehavior = 0;
   batteryProfileName = "";
   batteryChargeLimit = 100;
-  lockBeforeSuspend = false;
+  lockBeforeSuspend = true;
   loginctlLockIntegration = true;
   fadeToLockEnabled = true;
   fadeToLockGracePeriod = 5;
@@ -375,10 +375,10 @@ programs.dank-material-shell.settings = {
   osdIdleInhibitorEnabled = true;
   osdMicMuteEnabled = true;
   osdCapsLockEnabled = true;
-  osdPowerProfileEnabled = false;
+  osdPowerProfileEnabled = true;
   osdAudioOutputEnabled = true;
   powerActionConfirm = true;
-  powerActionHoldDuration = 0.5;
+  powerActionHoldDuration = 0.25;
   powerMenuActions = [
     "reboot"
     "logout"

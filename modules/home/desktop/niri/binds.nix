@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  noctalia = cmd: [
-    "noctalia-shell" "ipc" "call"
+  dms = cmd: [
+    "dms" "ipc" "call"
   ] ++ (pkgs.lib.splitString " " cmd);
 in
 {
@@ -13,40 +13,40 @@ in
     "Mod+Return".repeat = false;
     "Mod+R".action = spawn "foot" "yazi";
     "Mod+R".repeat = false;
-    "Mod+D".action.spawn = noctalia "launcher toggle";
+    "Mod+D".action.spawn = dms "spotlight toggle";
     "Mod+D".repeat = false;
     "Mod+0".action = spawn "foot" "bc" "-lq";
     "Mod+0".repeat = false;
-    "Mod+BackSpace".action.spawn = noctalia "sessionMenu toggle";
+    "Mod+BackSpace".action.spawn = dms "powermenu toggle";
     "Mod+BackSpace".repeat = false;
-    "Mod+Alt+L".action.spawn = noctalia "lockScreen lock";
+    "Mod+Alt+L".action.spawn = dms "lock lock";
     "Mod+Alt+L".repeat = false;
-    "Mod+N".action.spawn = noctalia "notifications toggleHistory";
+    "Mod+N".action.spawn = dms "notifications open";
     "Mod+N".repeat = false;
-    "Mod+Shift+N".action.spawn = noctalia "notifications dismissAll";
+    "Mod+Shift+N".action.spawn = dms "notifications dismissAllPopups";
     "Mod+Shift+N".repeat = false;
-    "Mod+B".action.spawn = noctalia "controlCenter toggle";
+    "Mod+B".action.spawn = dms "control-center toggle";
     "Mod+B".repeat = false;
     
-    "XF86AudioRaiseVolume".action.spawn = noctalia "volume increase";
+    "XF86AudioRaiseVolume".action.spawn = dms "audio increment 5";
     "XF86AudioRaiseVolume".allow-when-locked = true;
-    "XF86AudioLowerVolume".action.spawn = noctalia "volume decrease";
+    "XF86AudioLowerVolume".action.spawn = dms "audio decrement 5";
     "XF86AudioLowerVolume".allow-when-locked = true;
-    "XF86AudioMute".action.spawn = noctalia "volume muteOutput";
+    "XF86AudioMute".action.spawn = dms "audio mute";
     "XF86AudioMute".allow-when-locked = true;
-    "XF86AudioMicMute".action.spawn = noctalia "volume muteInput";
+    "XF86AudioMicMute".action.spawn = dms "audio micmute";
     "XF86AudioMicMute".allow-when-locked = true;
-    "XF86MonBrightnessUp".action.spawn = noctalia "brightness increase";
+    "XF86MonBrightnessUp".action.spawn = dms "brightness increment 5 backlight:intel_backlight";
     "XF86MonBrightnessUp".allow-when-locked = true;
-    "XF86MonBrightnessDown".action.spawn = noctalia "brightness decrease";
-    "XF86AudioPlay".action.spawn = noctalia "media playPause";
-    "XF86AudioStop".action.spawn = noctalia "media pause";
-    "XF86AudioPrev".action.spawn = noctalia "media previous";
-    "XF86AudioNext".action.spawn = noctalia "media next";
-    "Mod+Down".action.spawn = noctalia "media playPause";
-    "Mod+Up".action.spawn = noctalia "media pause";
-    "Mod+Left".action.spawn = noctalia "media previous";
-    "Mod+Right".action.spawn = noctalia "media next";
+    "XF86MonBrightnessDown".action.spawn = dms "brightness decrement 5 backlight:intel_backlight";
+    "XF86AudioPlay".action.spawn = dms "mpris playPause";
+    "XF86AudioStop".action.spawn = dms "mpris pause";
+    "XF86AudioPrev".action.spawn = dms "mpris previous";
+    "XF86AudioNext".action.spawn = dms "mpris next";
+    "Mod+Down".action.spawn = dms "mpris playPause";
+    "Mod+Up".action.spawn = dms "mpris pause";
+    "Mod+Left".action.spawn = dms "mpris previous";
+    "Mod+Right".action.spawn = dms "mpris next";
 
     "Mod+O".action = toggle-overview;
     "Mod+O".repeat = false;
@@ -138,7 +138,7 @@ in
     "Shift+Print".action.screenshot = [ ];
     "Print".action.screenshot-screen = [ ];
     #"Mod+Print".action.screenshot-window = [ ];
-    "Mod+Print".action.spawn = noctalia "plugin:screen-recorder toggle";
+    #"Mod+Print".action.spawn = dms "plugin:screen-recorder toggle";
     
     "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
     "Mod+Escape".allow-inhibiting = false;

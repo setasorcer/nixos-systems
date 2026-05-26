@@ -4,7 +4,6 @@
   imports = [
     ./niri
     ./dankmaterialshell
-    ./noctalia-shell
   ];
 
   stylix = {

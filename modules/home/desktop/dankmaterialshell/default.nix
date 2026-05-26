@@ -11,7 +11,7 @@
 
   programs.dank-material-shell = {
     enable = true;
-    systemd.enable = false;
+    systemd.enable = true;
     systemd.restartIfChanged = true;
 
     enableSystemMonitoring = false;
