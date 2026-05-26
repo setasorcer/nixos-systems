@@ -366,7 +366,7 @@ programs.dank-material-shell.settings = {
   notificationHistorySaveNormal = true;
   notificationHistorySaveCritical = true;
   notificationRules = [];
-  osdAlwaysShowValue = false;
+  osdAlwaysShowValue = true;
   osdPosition = 5;
   osdVolumeEnabled = true;
   osdMediaVolumeEnabled = true;
@@ -507,7 +507,31 @@ programs.dank-material-shell.settings = {
   ];
   desktopWidgetPositions = {};
   desktopWidgetGridSettings = {};
-  desktopWidgetInstances = [];
+  desktopWidgetInstances = [
+    {
+      id = "dw_1779823566554_oyvqj9w2l";
+      widgetType = "mediaPlayer";
+      name = "Media Player";
+      enabled = true;
+      config = {
+        displayPreferences = [
+          "all"
+        ];
+        rotateThumbnail = false;
+        clickThrough = false;
+        syncPositionAcrossScreens = true;
+        backgroundOpacity = 40;
+      };
+      positions = {
+        "_synced" = {
+          x = 0.840988;
+          y = 0.878472;
+          width = 530;
+          height = 160;
+        };
+      };
+    }
+  ];
   desktopWidgetGroups = [];
   builtInPluginSettings = {
     dms_settings_search = {
