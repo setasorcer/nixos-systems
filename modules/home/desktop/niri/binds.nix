@@ -130,15 +130,15 @@ in
     "Mod+C".action = center-column;
     "Mod+Ctrl+C".action = center-visible-columns;
     
-    "Mod+V".action = toggle-window-floating;
-    "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
+    "Mod+Shift+V".action = toggle-window-floating;
+    "Mod+V".action = switch-focus-between-floating-and-tiling;
     
     "Mod+W".action = toggle-column-tabbed-display;
     
     "Shift+Print".action.screenshot = [ ];
     "Print".action.screenshot-screen = [ ];
     #"Mod+Print".action.screenshot-window = [ ];
-    #"Mod+Print".action.spawn = dms "plugin:screen-recorder toggle";
+    "Mod+Print".action.spawn = dms "screenRecorder toggleRecording";
     
     "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
     "Mod+Escape".allow-inhibiting = false;

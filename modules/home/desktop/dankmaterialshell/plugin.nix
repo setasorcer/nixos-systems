@@ -5,6 +5,7 @@
     plugins = {
       calculator.enable = true;
       mediaPlayer.enable = true;
+      screenRecorder.enable = true;
     };
   };
 }
