@@ -4,6 +4,7 @@
   imports = [
     inputs.dms.homeModules.dank-material-shell
     inputs.dms-plugin-registry.modules.default
+    inputs.danksearch.homeModules.default
     ./settings.nix
     ./session.nix
     ./plugin.nix
@@ -18,5 +19,6 @@
     enableDynamicTheming = false;
     enableCalendarEvents = false;
   };
+  programs.dsearch.enable = true;
 
 }

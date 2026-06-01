@@ -1,25 +1,28 @@
-{ pkgs, config, lib, inputs, ... }:
+{ pkgs, config, lib, ... }:
 
 let
-  #cfgaagl = config.desktop.games.aagl;
-  cfgsteam = config.desktop.games.steam;
+  cfg = config.desktop.games;
 in
 {
-  #imports = [ inputs.aagl.nixosModules.default ];
-
   options.desktop = {
     games = {
-      #aagl.enable = lib.mkEnableOption "Enable installation of AAGL, used to launch an anime game";
       steam.enable = lib.mkEnableOption "Enable installation of Steam and other related utilities";
+      retroarch = {
+        enable = lib.mkEnableOption "RetroArch multi-system emulator";
+        cores = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [];
+          example = [ "genesis-plus-gx" "snes9x" "beetle-psx-hw" ];
+          description = ''
+            List of libretro core names to include. These correspond to attribute names in pkgs.libretro,
+            such as "genesis-plus-gx", "snes9x", or "beetle-psx-hw".
+          '';
+        };
+      };
     };
   };
   config = lib.mkMerge [
-    /*(lib.mkIf cfgaagl.enable {
-      nix.settings = inputs.aagl.nixConfig; # Set up Cachix
-      programs.anime-game-launcher.enable = true;
-    })*/
-    # Fixes steam when using xwayland-satellite, whilst still being able to use hwaccel (Although steam client still lags)
-    (lib.mkIf cfgsteam.enable {
+    (lib.mkIf cfg.steam.enable {
       nixpkgs.overlays = [
         (final: prev: {
           steam = prev.steam.override {
@@ -41,6 +44,11 @@ in
         capSysNice = true;
       };
       hardware.steam-hardware.enable = true;
+    })
+    (lib.mkIf cfg.retroarch.enable {
+      environment.systemPackages = let
+        retro = pkgs.retroarch.withCores (cores: map (coreName: cores.${coreName}) cfg.retroarch.cores);
+      in [ retro ];
     })
   ];
 }

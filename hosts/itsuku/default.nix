@@ -20,17 +20,12 @@
     ];
   };
 
-  # Framework-specific
-  services.fwupd.enable = true;
-  # Desktop-specific
-  programs.bazecor.enable = true;
-
-  # Laptop optimizations: battery modules, disable hyprland decorations
   desktop = {
-    virtualisation.enable = true;
+    enable = true;
+    niri.enable = true;
+    greeter.dms.enable = true;
     games = {
       steam.enable = true;
-      #aagl.enable = true;
       retroarch = {
         enable = true;
         cores = [
@@ -43,7 +38,11 @@
         ];
       };
     };
+    virtualisation.qemu.enable = true;
   };
+
+  # Desktop-specific
+  programs.bazecor.enable = true;
   environment.systemPackages = with pkgs; [
     anki-bin
     prismlauncher

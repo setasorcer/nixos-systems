@@ -17,7 +17,7 @@
       gtk.enable = true;
       gtk.flatpakSupport.enable = true;
       nvf.enable = true;
-      nvf.transparentBackground.main = true;
+      nvf.transparentBackground = true;
       yazi.enable = true;
     };
     icons = {
@@ -34,5 +34,10 @@
       name = lib.mkForce "Adwaita";
     };
   };
-
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.rose-pine-cursor;
+    name = "BreezeX-RosePineDawn-Linux";
+    size = 32;
+  };
 }

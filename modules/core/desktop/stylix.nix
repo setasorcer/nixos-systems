@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ lib, inputs, ... }:
 
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
@@ -29,7 +29,7 @@
       base0E = "8f8aac";
       base0F = "ac8aac";
     };
-    image = ./../../../papes/pape.jpg;
+    image = lib.mkDefault ./../../../papes/pape.jpg;
     polarity = "dark";
     # Waybar
     opacity.desktop = 0.7;
@@ -37,10 +37,5 @@
     opacity.popups = 0.9;
     opacity.terminal = 0.9;
     opacity.applications = 0.8;
-    cursor = {
-      package = pkgs.rose-pine-cursor;
-      name = "BreezeX-RosePineDawn-Linux";
-      size = 28;
-    };
   };
 }

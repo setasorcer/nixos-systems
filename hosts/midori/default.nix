@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ username, inputs, lib, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports =
@@ -12,21 +12,15 @@
       inputs.nixos-hardware.nixosModules.framework-12-13th-gen-intel
     ];
 
-  home-manager.users."${username}" = {
-      programs.niri.settings.outputs."eDP-1".scale = lib.mkForce 1;
-      programs.niri.settings.outputs."eDP-2".scale = lib.mkForce 1;
-  };
-
-  services.power-profiles-daemon.enable = true;
-  services.iio-niri.enable = true;
-  virtualisation.waydroid = {
-    enable = true;
-    package = pkgs.waydroid-nftables;
-  };
-
-  environment.systemPackages = with pkgs; [ krita ruffle ];
+  services.power-profiles-daemon.enable = true; # Enable becasue nixos-hardware doesn't by default, also needed to control power usage presets
 
   desktop = {
+    enable = true;
+    niri = {
+      enable = true;
+      iio.enable = true;
+    };
+    greeter.dms.enable = true;
     games = {
       steam.enable = true;
       retroarch = {
@@ -39,5 +33,11 @@
         ];
       };
     };
+    virtualisation.waydroid.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    krita
+    ruffle
+  ];
 }

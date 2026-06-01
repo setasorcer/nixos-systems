@@ -12,6 +12,4 @@
     }];
   };
   environment.systemPackages = [ pkgs.doas-sudo-shim ];
-  # Enable HM hyprlock to perform authentication
-  security.pam.services.hyprlock = {};
 }

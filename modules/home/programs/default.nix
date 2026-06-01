@@ -8,7 +8,7 @@
     ./mpv
     ./nvim
     ./swayimg
-    ./term
+    ./foot
     ./vesktop
     ./yazi
     ./zathura
@@ -17,7 +17,6 @@
 
   home.packages = with pkgs; [
     # System monitoring
-    bc # calculator
     ncdu # Disk space checker
     nvtopPackages.amd
     ryzenadj
@@ -40,7 +39,6 @@
     pulsemixer
 
     # Misc
-    hyprpicker
     sgdboop
   ];
 }

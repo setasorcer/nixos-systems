@@ -2,17 +2,18 @@
 
 My personal NixOS deployment for my workstation, server, school laptop, and future systems. Farewell, Artix.
 
-Now in noctalia-shell flavour!
+Now in DankMaterialShell flavour!
 
 ## Main Features
 
 ### Itsuku/Teppei
 
 - Niri (window manager)
-- Noctalia Shell (desktop shell)
-- Cosmic Greeter
+- Dank Material Shell (desktop shell)
+- dms-greeter (login page)
 - Stylix (uses [Mountain colourscheme](https://github.com/mountain-theme/Mountain/))
 - [NVF config](https://github.com/NotAShelf/nvf), by NotAShelf
+- Wallpaper by susudust
 
 Along with a bunch of other programs and preconfigured settings!
 
@@ -21,11 +22,8 @@ anki
 btop
 foot
 jellyfin-tui (jellyfin music player)
-kdenlive (video editor)
 mpv
-picard (music tagger)
 qemu
-qbittorrent
 retroarch
 steam
 swayimg (image viewer)

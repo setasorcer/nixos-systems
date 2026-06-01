@@ -101,7 +101,7 @@
       parent-arrow = ./parent-arrow;
       jump-to-char = pkgs.yaziPlugins.jump-to-char;
       relative-motions = pkgs.yaziPlugins.relative-motions;
-      sshfs = ./sshfs;
+      sshfs = pkgs.yaziPlugins.sshfs;
     };
   };
 }
