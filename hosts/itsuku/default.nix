@@ -26,6 +26,7 @@
     greeter.dms.enable = true;
     games = {
       steam.enable = true;
+      prismlauncher.enable = true;
       retroarch = {
         enable = true;
         cores = [
@@ -45,8 +46,6 @@
   programs.bazecor.enable = true;
   environment.systemPackages = with pkgs; [
     anki-bin
-    prismlauncher
-    #nexusmods-app-unfree
     kdePackages.kdenlive
     picard
     rsgain

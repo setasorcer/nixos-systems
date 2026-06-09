@@ -39,6 +39,7 @@ in
     "XF86MonBrightnessUp".action.spawn = dms "brightness increment 5 backlight:intel_backlight";
     "XF86MonBrightnessUp".allow-when-locked = true;
     "XF86MonBrightnessDown".action.spawn = dms "brightness decrement 5 backlight:intel_backlight";
+    "XF86MonBrightnessDown".allow-when-locked = true;
     "XF86AudioPlay".action.spawn = dms "mpris playPause";
     "XF86AudioStop".action.spawn = dms "mpris pause";
     "XF86AudioPrev".action.spawn = dms "mpris previous";

@@ -7,8 +7,9 @@ in
   options.desktop = {
     games = {
       steam.enable = lib.mkEnableOption "Enable installation of Steam and other related utilities";
+      prismlauncher.enable = lib.mkEnableOption "Enable Prism Launcher, a Minecraft launcher";
       retroarch = {
-        enable = lib.mkEnableOption "RetroArch multi-system emulator";
+        enable = lib.mkEnableOption "Enable RetroArch multi-system emulator";
         cores = lib.mkOption {
           type = lib.types.listOf lib.types.str;
           default = [];
@@ -49,6 +50,9 @@ in
       environment.systemPackages = let
         retro = pkgs.retroarch.withCores (cores: map (coreName: cores.${coreName}) cfg.retroarch.cores);
       in [ retro ];
+    })
+    (lib.mkIf cfg.prismlauncher.enable {
+      environment.systemPackages = [ pkgs.prismlauncher ];
     })
   ];
 }
