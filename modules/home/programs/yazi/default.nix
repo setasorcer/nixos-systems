@@ -24,10 +24,10 @@
       };
       plugin = {
         prepend_preloaders = [
-          { name = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
+          { url = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
         ];
         prepend_previewers = [
-          { name = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
+          { url = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
           # Archive previewer
           { mime = "application/*zip"; run = "ouch"; }
           { mime = "application/x-tar"; run = "ouch"; }
@@ -35,11 +35,11 @@
           { mime = "application/x-7z-compressed"; run = "ouch"; }
           { mime = "application/x-rar"; run = "ouch"; }
           { mime = "application/x-xz"; run = "ouch"; }
-          { name = "*.zip"; run = "ouch"; }
-          { name = "*.xz"; run = "ouch"; }
-          { name = "*.rar"; run = "ouch"; }
-          { name = "*.7z"; run = "ouch"; }
-          { name = "*.tar"; run = "ouch"; }
+          { url = "*.zip"; run = "ouch"; }
+          { url = "*.xz"; run = "ouch"; }
+          { url = "*.rar"; run = "ouch"; }
+          { url = "*.7z"; run = "ouch"; }
+          { url = "*.tar"; run = "ouch"; }
         ];
       };
       opener = {

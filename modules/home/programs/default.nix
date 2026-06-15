@@ -5,11 +5,13 @@
     ./btop
     ./git
     ./gpg
+    ./jellyfin-tui
     ./mpv
     ./nvim
+    ./sops
     ./swayimg
     ./foot
-    ./vesktop
+    #./vesktop
     ./yazi
     ./zathura
     ./zen
@@ -21,7 +23,7 @@
     nvtopPackages.amd
     ryzenadj
 
-    # Multimedia toold
+    # Multimedia tools
     ffmpeg
     imagemagick
     yt-dlp
@@ -33,12 +35,12 @@
     sops
 
     # Sound/music tools
-    jellyfin-tui
     jellyfin-mpv-shim
     opencloud-desktop
     pulsemixer
 
     # Misc
     sgdboop
+    vesktop
   ];
 }

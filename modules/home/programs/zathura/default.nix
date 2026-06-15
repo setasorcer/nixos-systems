@@ -1,7 +1,6 @@
 { config, ... }:
 
 {
-  # Lmao
   programs.zathura = {
     enable = true;
     options = {
