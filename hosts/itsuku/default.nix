@@ -49,7 +49,6 @@
     kdePackages.kdenlive
     picard
     rsgain
-    faugus-launcher
   ];
   environment.sessionVariables = { 
     DRI_PRIME = "1002:7480"; # Prioritise dGPU over iGPU
