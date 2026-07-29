@@ -7,7 +7,10 @@
   networking.nameservers = [ "127.0.0.1" ];
   services.dnsmasq = {
     enable = true;
-    settings.server = [ "192.168.1.229" "192.168.1.1" ];
+    settings = {
+      server = [ "192.168.1.229" "192.168.1.1" ];
+      strict-order = true;
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

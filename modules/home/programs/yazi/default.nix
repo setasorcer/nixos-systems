@@ -24,10 +24,10 @@
       };
       plugin = {
         prepend_preloaders = [
-          { url = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
+          { url = "${config.xdg.userDirs.documents}/mnt/**"; run = "noop"; }
         ];
         prepend_previewers = [
-          { url = "${config.home.homeDirectory}/dox/mnt/**"; run = "noop"; }
+          { url = "${config.xdg.userDirs.documents}/dox/mnt/**"; run = "noop"; }
           # Archive previewer
           { mime = "application/*zip"; run = "ouch"; }
           { mime = "application/x-tar"; run = "ouch"; }
