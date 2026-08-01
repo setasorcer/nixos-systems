@@ -100,6 +100,7 @@
     ./jellyfin
     ./memos
     ./opencloud
+    ./pi-hole
     ./sabnzbd
     ./slskd
     #./szurubooru

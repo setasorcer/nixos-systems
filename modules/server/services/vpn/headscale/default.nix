@@ -27,8 +27,9 @@ in
       settings = {
         server_url = "https://${cfg.url}";
         dns = {
-          base_domain = server.internalDomain;
-          nameservers.global = [ "1.1.1.1" "8.8.8.8" ];
+          #base_domain = server.internalDomain;
+          nameservers.global = [ "127.0.0.1" "9.9.9.9" ];
+          magic_dns = false;
         };
       };
     };

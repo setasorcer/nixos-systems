@@ -144,6 +144,18 @@ in
                       }
                     ];
                   }
+                  {
+                    type = "monitor";
+                    cache = "1m";
+                    title = "Network";
+                    sites = [
+                      {
+                        title = "Pi-hole";
+                        url = "http://${server.services.pihole.url}";
+                        icon = "di:pi-hole";
+                      }
+                    ];
+                  }
                 ];
               }
               {

@@ -30,7 +30,7 @@ in
     dns-refresh.enable = true;
     baseDomain = "setasorcer.xyz";
     internalDomain = "yarara.void";
-    localDomain = "192.168.1.75";
+    localDomain = "192.168.0.9";
     dataDir = "/mnt/zichi";
 
     services = {
@@ -70,6 +70,10 @@ in
       opencloud = {
         enable = true;
         port = 9200;
+      };
+      pihole = {
+        enable = true;
+        port.web = 1080;
       };
       sabnzbd = {
         enable = true;

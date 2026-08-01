@@ -3,6 +3,7 @@
 {
   networking.hostName = "${host}";
   networking.hostId = "725e1640";
+  networking.enableIPv6 = false;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
