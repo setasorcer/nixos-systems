@@ -7,5 +7,5 @@
   sops.defaultSopsFile = ./../../../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
 
-  sops.age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+  sops.age.keyFile = "${config.xdg.configHome}/sops-nix/age/keys.txt";
 }
