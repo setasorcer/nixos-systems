@@ -88,11 +88,12 @@
         { on = [ "g" "d" ]; run = "noop"; }
         { on = [ "M" "m" ]; run = "plugin sshfs -- mount --jump"; desc = "Mount & jump"; }
         { on = [ "M" "u" ]; run = "plugin sshfs -- unmount"; desc = "Unmount SSHFS"; }
+        { on = [ "M" "t" ]; run = "plugin sshfs -- terminal"; desc = "SSH Terminal"; }
         { on = [ "M" "a" ]; run = "plugin sshfs -- add"; desc = "Add SSH host"; }
         { on = [ "M" "r" ]; run = "plugin sshfs -- remove"; desc = "Remove SSH host"; }
         { on = [ "M" "h" ]; run = "plugin sshfs -- home"; desc = "Go to mount home"; }
         { on = [ "M" "c" ]; run = "cd ~/.ssh/"; desc = "Go to ssh config"; }
-        { on = [ "g" "m" ]; run = "plugin sshfs -- jump"; desc = "Jump to mount"; }
+        { on = [ "M" "l" ]; run = "plugin sshfs -- hosts"; desc = "Open custom host list"; }
       ];
     };
     plugins = {

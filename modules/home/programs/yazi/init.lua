@@ -91,11 +91,13 @@ require("relative-motions"):setup({ show_numbers="relative", show_motion = true,
 -- SSHFS plugin
 require("sshfs"):setup({
   mount_dir = home_path .. "/dox/mnt",
+  default_mount_point = "root",
   sshfs_options = {
+    "reconnect",
     "ConnectTimeout=5",
     "compression=yes",
     "ServerAliveInterval=15",
-    "port=1075",
+    "ServerAliveCountMax=3",
     -- ... any sshfs option as strings
   }
 })
