@@ -11,8 +11,8 @@
     fonts = {
       serif = config.stylix.fonts.sansSerif;
       sansSerif = {
-        package = pkgs.aileron;
-        name = "Aileron";
+        package = pkgs.nerd-fonts.inconsolata;
+        name = "Inconsolata Nerd Font Mono";
       };
       monospace = {
         package = pkgs.nerd-fonts.inconsolata;
