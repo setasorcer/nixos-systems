@@ -27,7 +27,7 @@
           { url = "${config.xdg.userDirs.documents}/mnt/**"; run = "noop"; }
         ];
         prepend_previewers = [
-          { url = "${config.xdg.userDirs.documents}/dox/mnt/**"; run = "noop"; }
+          { url = "${config.xdg.userDirs.documents}/mnt/**"; run = "noop"; }
           # Archive previewer
           { mime = "application/*zip"; run = "ouch"; }
           { mime = "application/x-tar"; run = "ouch"; }
