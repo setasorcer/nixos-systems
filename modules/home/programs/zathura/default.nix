@@ -4,7 +4,7 @@
   programs.zathura = {
     enable = true;
     options = {
-      default-bg = "#${config.stylix.base16Scheme.base01}";
+      default-bg = "${config.lib.stylix.colors.withHashtag.base01}";
     };
   };
 }

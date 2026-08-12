@@ -47,8 +47,8 @@
 
       focus-ring = {
         width = 4;
-        active.color = "#${config.stylix.base16Scheme.base0E}";
-        inactive.color = "#${config.stylix.base16Scheme.base00}";
+        active.color = "${config.lib.stylix.colors.withHashtag.base0D}";
+        inactive.color = "${config.lib.stylix.colors.withHashtag.base00}";
       };
 
       shadow = {

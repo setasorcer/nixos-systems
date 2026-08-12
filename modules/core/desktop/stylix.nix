@@ -1,4 +1,4 @@
-{ lib, inputs, ... }:
+{ lib, inputs, pkgs, ... }:
 
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
@@ -10,25 +10,7 @@
       fish.enable = true;
       gtk.enable = true;
     };
-    # Mountain colour scheme by gnsfujiwara
-    base16Scheme = {
-      base00 = "0f0f0f";
-      base01 = "191919";
-      base02 = "262626";
-      base03 = "393939";
-      base04 = "4c4c4c";
-      base05 = "a0a0a0";
-      base06 = "bfbfbf";
-      base07 = "cacaca";
-      base08 = "ac8a8c";
-      base09 = "c6a679";
-      base0A = "aca98a";
-      base0B = "8aac8b";
-      base0C = "8aacab";
-      base0D = "8a98ac";
-      base0E = "8f8aac";
-      base0F = "ac8aac";
-    };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/mountain.yaml";
     image = lib.mkDefault ./../../../papes/pape.jpg;
     polarity = "dark";
     # Waybar

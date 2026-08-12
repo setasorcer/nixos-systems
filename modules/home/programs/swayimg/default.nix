@@ -34,9 +34,9 @@ swayimg.text.visible = true             -- show on startup
 swayimg.text.font = "Inconsolata Nerd Font Propo" -- font name
 swayimg.text.size = 18                  -- font size in pixels
 swayimg.text.padding = 10               -- padding from window edge
-swayimg.text.color = 0xFF${config.stylix.base16Scheme.base07}    -- font color
-swayimg.text.background = 0xE6${config.stylix.base16Scheme.base01} -- background color
-swayimg.text.shadow = 0xCC${config.stylix.base16Scheme.base01}   -- shadow color
+swayimg.text.color = 0xFF${config.lib.stylix.colors.base07}    -- font color
+swayimg.text.background = 0xE6${config.lib.stylix.colors.base00} -- background color
+swayimg.text.shadow = 0xCC${config.lib.stylix.colors.base00}   -- shadow color
 swayimg.text.timeout = 5                -- info timeout (seconds)
 swayimg.text.status_timeout = 3         -- status message timeout (seconds)
 
@@ -49,7 +49,7 @@ swayimg.viewer.autocenter = true            -- fix position of the image on the 
 swayimg.viewer.loop = true                  -- enable image list loop mode
 swayimg.viewer.preload = 1                  -- number of images to preload
 swayimg.viewer.history = 1                  -- number of images in history cache
-swayimg.viewer.set_window_background(0xE6${config.stylix.base16Scheme.base01}) -- window background color
+swayimg.viewer.set_window_background(0xE6${config.lib.stylix.colors.base00}) -- window background color
 
 -- Display scheme for viewer mode - position = content
 -- top_left: +name,+format,+filesize,+imagesize
@@ -319,11 +319,11 @@ swayimg.gallery.thumb_size = 200            -- thumbnail size in pixels
 swayimg.gallery.aspect = "fill"             -- fill the entire tile with thumbnail
 swayimg.gallery.padding_size = 5            -- default padding
 swayimg.gallery.border_size = 5             -- border size for selected thumbnail
-swayimg.gallery.border_color = 0xE6${config.stylix.base16Scheme.base01}  -- border color for selected thumbnail
+swayimg.gallery.border_color = 0xE6${config.lib.stylix.colors.base00}  -- border color for selected thumbnail
 swayimg.gallery.selected_scale = 1.15       -- normal scale
-swayimg.gallery.selected_color = 0xE6${config.stylix.base16Scheme.base01} -- background color for selected tile
-swayimg.gallery.unselected_color = 0xE6${config.stylix.base16Scheme.base01} -- background color of unselected thumbnail
-swayimg.gallery.window_color = 0xE6${config.stylix.base16Scheme.base01}   -- window background color
+swayimg.gallery.selected_color = 0xE6${config.lib.stylix.colors.base00} -- background color for selected tile
+swayimg.gallery.unselected_color = 0xE6${config.lib.stylix.colors.base00} -- background color of unselected thumbnail
+swayimg.gallery.window_color = 0xE6${config.lib.stylix.colors.base00}   -- window background color
 swayimg.gallery.pinch_factor = 100.0          -- pinch gesture factor
 swayimg.gallery.hover = true                -- enable mouse following
 swayimg.gallery.cache = 100                 -- thumbnail cache size
@@ -445,7 +445,7 @@ end)
 swayimg.slideshow.timeout = 3               -- slideshow time from viewer config
 swayimg.slideshow.history = 0               -- disable history for slideshow (default)
 swayimg.slideshow.default_scale = "optimal" -- use viewer's scale setting
-swayimg.slideshow.set_window_background(0x${config.stylix.base16Scheme.base01}E6)
+swayimg.slideshow.set_window_background(0x${config.lib.stylix.colors.base00}E6)
 
 -- switch to viewer mode
 swayimg.slideshow.on_key("s", function()
