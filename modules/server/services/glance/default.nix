@@ -16,7 +16,7 @@ in
     };
     port = lib.mkOption {
       type = lib.types.int;
-      default = 8087;
+      default = 8080;
     };
   };
   config = lib.mkIf cfg.enable {
@@ -28,7 +28,15 @@ in
         server.port = cfg.port;
         auth = {
           secret-key = "\${GLANCE_SECRET_KEY}";
-          users.admin.password = "\${GLANCE_USER_PASSWORD}";
+          users.kanrisha.password = "\${GLANCE_USER_PASSWORD}";
+        };
+        theme = {
+          disable-picker = true;
+
+          # Mountain color scheme
+          background-color = "0 0 5.9";
+          primary-color = "249 17 60.8";
+          negative-color = "356 17 60.8";
         };
         pages = [
           {
@@ -63,16 +71,16 @@ in
                         url = "https://${server.services.jellyfin.url}";
                         icon = "di:jellyfin";
                       }
-                      /*{
-                        title = "Audiobookshelf";
-                        url = "http://${server.services.audiobookshelf.url}";
-                        icon = "di:audiobookshelf";
+                      {
+                        title = "LANraragi";
+                        url = "http://${server.services.lanraragi.url}";
+                        icon = "di:lanraragi";
                       }
                       {
-                        title = "Komga";
-                        url = "http://${server.services.komga.url}";
-                        icon = "di:komga";
-                      }*/
+                        title = "Navidrome";
+                        url = "https://${server.services.navidrome.url}";
+                        icon = "di:navidrome";
+                      }
                     ];
                   }
                   {
@@ -85,11 +93,6 @@ in
                         url = "https://${server.services.memos.url}";
                         icon = "di:memos";
                       }
-                      /*{
-                        title = "File Browser";
-                        url = "http://${server.services.filebrowser.url}";
-                        icon = "di:filebrowser";
-                      }*/
                       {
                         title = "Opencloud";
                         url = "https://${server.services.opencloud.url}";
@@ -101,14 +104,14 @@ in
                         icon = "di:immich";
                       }
                       {
+                        title = "Radicale";
+                        url = "http://${server.services.radicale.url}";
+                        icon = "di:radicale";
+                      }
+                      {
                         title = "Vaultwarden";
                         url = "https://${server.services.vaultwarden.url}";
                         icon = "di:vaultwarden";
-                      }
-                      {
-                        title = "Vikunja";
-                        url = "https://${server.services.vikunja.url}";
-                        icon = "di:vikunja";
                       }
                     ];
                   }
@@ -127,11 +130,11 @@ in
                         url = "http://${server.services.sonarr.url}";
                         icon = "di:sonarr";
                       }
-                      {
+                      /*{
                         title = "Seerr";
                         url = "http://${server.services.seerr.url}";
                         icon = "di:seerr";
-                      }
+                      }*/
                       {
                         title = "Sabnzbd";
                         url = "http://${server.services.sabnzbd.url}";

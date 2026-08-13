@@ -12,6 +12,10 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
+      default = "${service}.${server.internalDomain}";
+    };
+    localUrl = lib.mkOption {
+      type = lib.types.str;
       default = "${server.localDomain}:${toString cfg.port}";
     };
     port = lib.mkOption {
@@ -23,7 +27,17 @@ in
     services.${service} = {
       enable = true;
       openFirewall = true;
+      configFile = null;
+      settings.misc = {
+        port = cfg.port;
+        host = "0.0.0.0";
+      };
     };
     users.users.${service}.extraGroups = [ "kyoka" ];  
+    services.caddy.virtualHosts."http://${cfg.url}" = {
+      extraConfig = ''
+        reverse_proxy ${server.localDomain}:${toString cfg.port}
+      '';
+    };
   };
 }

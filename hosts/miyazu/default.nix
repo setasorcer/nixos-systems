@@ -29,7 +29,7 @@ in
     enable = true;
     dns-refresh.enable = true;
     baseDomain = "setasorcer.xyz";
-    internalDomain = "yarara.void";
+    internalDomain = "setasorcer.local";
     localDomain = "192.168.0.9";
     dataDir = "/mnt/zichi";
 
@@ -44,12 +44,8 @@ in
         port = 8989;
       };
       seerr = {
-        enable = true;
-        port = 5055;
-      };
-      deluge = {
         enable = false;
-        port = 8112;
+        port = 5055;
       };
       glance = {
         enable = true;
@@ -63,9 +59,17 @@ in
         enable = true;
         port = 8096;
       };
+      lanraragi = {
+        enable = true;
+        port = 3000;
+      };
       memos = {
         enable = true;
         port = 5230;
+      };
+      navidrome = {
+        enable = true;
+        port = 4533;
       };
       opencloud = {
         enable = true;
@@ -75,9 +79,13 @@ in
         enable = true;
         port.web = 1080;
       };
+      radicale = {
+        enable = true;
+        port = 5232;
+      };
       sabnzbd = {
         enable = true;
-        port = 8080; # Warning: does not change the actual port of sabnzbd
+        port = 8081;
       };
       slskd = {
         enable = true;
@@ -88,7 +96,7 @@ in
         port = 8222;
       };
       vikunja = {
-        enable = true;
+        enable = false;
         port = 3456;
       };
       headscale = {

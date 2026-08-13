@@ -16,7 +16,7 @@ in
     };
     port = lib.mkOption {
       type = lib.types.int;
-      default = 8085;
+      default = 8080;
     };
   };
   config = lib.mkIf cfg.enable {
@@ -28,7 +28,7 @@ in
         server_url = "https://${cfg.url}";
         dns = {
           #base_domain = server.internalDomain;
-          nameservers.global = [ "127.0.0.1" "9.9.9.9" ];
+          nameservers.global = [ "${server.localDomain}" "9.9.9.9" ];
           magic_dns = false;
         };
       };

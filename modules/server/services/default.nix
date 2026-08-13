@@ -48,16 +48,11 @@
         nginx.enable = false;
         openssh = {
           enable = true;
-          ports = [ 1075 ];
+          ports = [ 22 ];
           settings = {
             PermitRootLogin = "no";
           AllowUsers = [ "${username}" ];
           };
-        };
-        endlessh = {
-          enable = true;
-          port = 22;
-          openFirewall = true;
         };
       };
     })
@@ -94,16 +89,17 @@
     ./arr/radarr
     ./arr/sonarr
     ./arr/seerr
-    ./deluge
     ./glance
     ./immich
     ./jellyfin
+    ./lanraragi
     ./memos
+    ./navidrome
     ./opencloud
-    ./pi-hole
+    ./pihole
+    ./radicale
     ./sabnzbd
     ./slskd
-    #./szurubooru
     ./vaultwarden
     ./vikunja
     ./vpn/headscale

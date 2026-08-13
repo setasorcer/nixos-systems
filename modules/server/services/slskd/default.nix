@@ -12,7 +12,11 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port.web}";
+      default = "${service}.${server.internalDomain}";
+    };
+    localUrl = lib.mkOption {
+      type = lib.types.str;
+      default = "${server.localDomain}:${toString cfg.port}";
     };
     port.web = lib.mkOption {
       type = lib.types.int;
@@ -40,12 +44,11 @@ in
         soulseek.listen_port = cfg.port.listen;
       };
     };
-    # NOTE: Test if the web port works locally, I would prefer not hosting slskd's web service publicly and instead using my todo list to make artist/album requests
-    /*services.caddy.virtualHosts."slskd.setasorcer.xyz" = {
+    services.caddy.virtualHosts."http://${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy localhost:${toString port}
+        reverse_proxy ${server.localDomain}:${toString cfg.port.web}
       '';
-    };*/  
+    };
     
     # Almost forgot this lmao
     networking.firewall.allowedTCPPorts = [ cfg.port.web cfg.port.listen ];

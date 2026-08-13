@@ -7,7 +7,7 @@
   sops.defaultSopsFile = ./../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
 
-  sops.age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
+  sops.age.keyFile = "/home/${username}/.config/sops-nix/age/keys.txt";
   sops.secrets.slskd-env = {
     owner = "slskd";
     group = "slskd";
@@ -38,6 +38,12 @@
     group = "root";
     mode = "0400";
     restartUnits = [ "glance.service" ]; # Restart slskd if secrets change
+  };
+  sops.secrets.lanraragi-password = {
+    owner = "lanraragi";
+    group = "lanraragi";
+    mode = "0400";
+    restartUnits = [ "lanraragi.service" ]; # Restart slskd if secrets change
   };
   #sops.secrets.szurubooru-secret = {
   #  owner = "szurubooru";

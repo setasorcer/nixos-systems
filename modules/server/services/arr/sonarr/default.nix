@@ -12,6 +12,10 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
+      default = "${service}.${server.internalDomain}";
+    };
+    localUrl = lib.mkOption {
+      type = lib.types.str;
       default = "${server.localDomain}:${toString cfg.port}";
     };
     port = lib.mkOption {
@@ -26,5 +30,10 @@ in
       settings.server.port = cfg.port;
     };
     users.users.${service}.extraGroups = [ "kyoka" "sabnzbd" ];
+    services.caddy.virtualHosts."http://${cfg.url}" = {
+      extraConfig = ''
+        reverse_proxy ${server.localDomain}:${toString cfg.port}
+      '';
+    };
   };
 }

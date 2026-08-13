@@ -19,6 +19,7 @@ in
     services.${service} = {
       enable = true;
       port = cfg.port;
+      permitCertUid = "caddy";
     };
     networking.firewall = {
       checkReversePath = "loose";

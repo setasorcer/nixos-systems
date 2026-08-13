@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "vikunja.${server.baseDomain}";
+      default = "${service}.${server.baseDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -24,15 +24,15 @@ in
       enable = true;
       settings = {
         service.enableregistration = false;
+        #files.basepath = lib.mkForce "${server.dataDir}/media/tasks";
       };
-      #database.path = "${server.dataDir}/media/tasks";
       frontendScheme = "https";
       frontendHostname = cfg.url;
     };
     services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy localhost:${toString cfg.port}
+        reverse_proxy ${server.localDomain}:${toString cfg.port}
       '';
-    };  
+    };
   };
 }

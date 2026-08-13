@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  service = "radarr";
+  service = "lanraragi";
   cfg = config.server.services.${service};
   server = config.server;
 in
@@ -20,20 +20,28 @@ in
     };
     port = lib.mkOption {
       type = lib.types.int;
-      default = 7878;
+      default = 3000;
     };
   };
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
       openFirewall = true;
-      settings.server.port = cfg.port;
+      port = cfg.port;
+      passwordFile = config.sops.secrets.lanraragi-password.path;
     };
-    users.users.${service}.extraGroups = [ "kyoka" "sabnzbd" ];
     services.caddy.virtualHosts."http://${cfg.url}" = {
       extraConfig = ''
         reverse_proxy ${server.localDomain}:${toString cfg.port}
       '';
+    };
+    systemd.services.lanraragi.serviceConfig.ReadWritePaths = [
+      "${server.dataDir}/library/doujinshi"
+    ];
+    users.groups.${service} = {};
+    users.users.${service} = {
+      isSystemUser = true;
+      group = "${service}";
     };
   };
 }
