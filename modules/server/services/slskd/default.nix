@@ -12,11 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port.web = lib.mkOption {
       type = lib.types.int;
@@ -44,14 +40,14 @@ in
         soulseek.listen_port = cfg.port.listen;
       };
     };
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port.web}
+        reverse_proxy localhost:${toString cfg.port.web}
       '';
     };
     
     # Almost forgot this lmao
-    networking.firewall.allowedTCPPorts = [ cfg.port.web cfg.port.listen ];
+    networking.firewall.allowedTCPPorts = [ cfg.port.listen ];
     users.users.${service}.extraGroups = [ "kyoka" ];
   };
 }

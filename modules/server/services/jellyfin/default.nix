@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.baseDomain}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -22,7 +22,6 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
     };
     systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD";
     environment.systemPackages = with pkgs; [

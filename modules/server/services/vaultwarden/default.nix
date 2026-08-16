@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "bitwarden.${server.baseDomain}";
+      default = "bitwarden.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;

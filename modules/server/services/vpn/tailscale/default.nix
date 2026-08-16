@@ -3,7 +3,6 @@
 let
   service = "tailscale";
   cfg = config.server.services.${service};
-  server = config.server;
 in
 {
   options.server.services.${service} = {

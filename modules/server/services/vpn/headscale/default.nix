@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.baseDomain}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -28,7 +28,7 @@ in
         server_url = "https://${cfg.url}";
         dns = {
           #base_domain = server.internalDomain;
-          nameservers.global = [ "${server.localDomain}" "9.9.9.9" ];
+          nameservers.global = [ "192.168.0.9" ];
           magic_dns = false;
         };
       };

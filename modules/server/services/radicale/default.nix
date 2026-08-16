@@ -12,11 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -32,9 +28,9 @@ in
         storage.filesystem_folder = "${server.dataDir}/files/cal";
       };
     };
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port}
+        reverse_proxy localhost:${toString cfg.port}
       '';
     };
   };

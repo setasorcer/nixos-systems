@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "memos.${server.baseDomain}";
+      default = "memos.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;

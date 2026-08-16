@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.baseDomain}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -22,7 +22,6 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
       settings = {
         MusicFolder = "${server.dataDir}/media/music";
         Port = cfg.port;

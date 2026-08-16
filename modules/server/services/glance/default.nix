@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = server.baseDomain;
+      default = server.publicDomain;
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -73,7 +73,7 @@ in
                       }
                       {
                         title = "LANraragi";
-                        url = "http://${server.services.lanraragi.url}";
+                        url = "https://${server.services.lanraragi.url}";
                         icon = "di:lanraragi";
                       }
                       {
@@ -100,12 +100,12 @@ in
                       }
                       {
                         title = "Immich";
-                        url = "http://${server.services.immich.url}";
+                        url = "https://${server.services.immich.url}";
                         icon = "di:immich";
                       }
                       {
                         title = "Radicale";
-                        url = "http://${server.services.radicale.url}";
+                        url = "https://${server.services.radicale.url}";
                         icon = "di:radicale";
                       }
                       {
@@ -122,27 +122,27 @@ in
                     sites = [
                       {
                         title = "Radarr";
-                        url = "http://${server.services.radarr.url}";
+                        url = "https://${server.services.radarr.url}";
                         icon = "di:radarr";
                       }
                       {
                         title = "Sonarr";
-                        url = "http://${server.services.sonarr.url}";
+                        url = "https://${server.services.sonarr.url}";
                         icon = "di:sonarr";
                       }
                       /*{
                         title = "Seerr";
-                        url = "http://${server.services.seerr.url}";
+                        url = "https://${server.services.seerr.url}";
                         icon = "di:seerr";
                       }*/
                       {
                         title = "Sabnzbd";
-                        url = "http://${server.services.sabnzbd.url}";
+                        url = "https://${server.services.sabnzbd.url}";
                         icon = "di:sabnzbd";
                       }
                       {
                         title = "Slskd";
-                        url = "http://${server.services.slskd.url}";
+                        url = "https://${server.services.slskd.url}";
                         icon = "di:slskd";
                       }
                     ];
@@ -154,7 +154,7 @@ in
                     sites = [
                       {
                         title = "Pi-hole";
-                        url = "http://${server.services.pihole.url}";
+                        url = "https://${server.services.pihole.url}";
                         icon = "di:pi-hole";
                       }
                     ];

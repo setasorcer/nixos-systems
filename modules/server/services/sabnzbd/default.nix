@@ -12,11 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -26,17 +22,15 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
-      configFile = null;
+      configFile = null; # Remove disclaimer when rebuilding
       settings.misc = {
         port = cfg.port;
-        host = "0.0.0.0";
       };
     };
     users.users.${service}.extraGroups = [ "kyoka" ];  
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port}
+        reverse_proxy localhost:${toString cfg.port}
       '';
     };
   };

@@ -12,11 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -26,13 +22,16 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
       port = cfg.port;
       passwordFile = config.sops.secrets.lanraragi-password.path;
     };
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port}
+        reverse_proxy localhost:${toString cfg.port}
+
+        tls /var/lib/acme/${server.publicDomain}/cert.pem /var/lib/acme/${server.publicDomain}/key.pem {
+          protocols tls1.3
+        }
       '';
     };
     systemd.services.lanraragi.serviceConfig.ReadWritePaths = [

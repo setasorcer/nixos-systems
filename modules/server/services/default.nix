@@ -9,21 +9,14 @@
     dns-refresh = {
       enable = lib.mkEnableOption "Homelab services and configuration options";
     };
-    baseDomain = lib.mkOption {
+    publicDomain = lib.mkOption {
       default = "";
       type = lib.types.str;
       description = ''
         Base domain used by Caddy
       '';
     };
-    internalDomain = lib.mkOption {
-      default = "";
-      type = lib.types.str;
-      description = ''
-        Domain name used by Headscale and Tailscale devices
-      '';
-    };
-    localDomain = lib.mkOption {
+    localAddress = lib.mkOption {
       default = "";
       type = lib.types.str;
       description = ''
@@ -42,7 +35,23 @@
   config = lib.mkMerge [
     (lib.mkIf config.server.services.enable {
       networking.firewall.allowedTCPPorts = [ 80 443 ];
-      # networking.firewall.allowedUDPPorts = [ ... ];
+      # Self-signed local HTTPS certificates with ACME
+      security.acme = {
+        acceptTerms = true;
+        defaults.email = "admin@sakujipalace.fyi";
+
+        certs."${config.server.publicDomain}" = {
+          group = config.services.caddy.group;
+          domain = config.server.publicDomain;
+          extraDomainNames = [ "*.${config.server.publicDomain}" ];
+
+          dnsProvider = "porkbun";
+          dnsResolver = "${toString config.server.localAddress}:53";
+          dnsPropagationCheck = false;
+
+          environmentFile = config.sops.templates."acme-env".path;
+        };
+      };
       services = {
         caddy.enable = true;
         nginx.enable = false;
@@ -57,30 +66,18 @@
       };
     })
     (lib.mkIf config.server.dns-refresh.enable {
-      # Uses Namecheap's Dynamic DNS feature to update the IP address if it ever changes
-      systemd.services.namecheap-ddns = let
-        server = config.server;
-      in {
-        description = "Update Namecheap dynamic DNS";
-        serviceConfig = {
-          Type = "oneshot";
-          ExecStart = pkgs.writeShellScript "update-ddns" ''
-            set -e
-            domain=${server.baseDomain}
-            password=$(cat ${config.sops.secrets.ddns-password.path})
-            for host in "@" "*"; do
-              ${pkgs.curl}/bin/curl -s \
-                "https://dynamicdns.park-your-domain.com/update?host=$host&domain=$domain&password=$password"
-            done
-          '';
+      services.ddns-updater = {
+        enable = true;
+        environment = {
+          SERVER_ENABLED = "no";
+          CONFIG_FILEPATH = config.sops.templates."ddns-config.json".path;
+          PERIOD = "5m";
         };
       };
-      systemd.timers.namecheap-ddns = {
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-          OnBootSec = "1min";
-          OnUnitActiveSec = "10min";
-        };
+      users.groups.ddns-updater = {};
+      users.users.ddns-updater = {
+        isSystemUser = true;
+        group = "ddns-updater";
       };
     })
   ];
@@ -88,7 +85,6 @@
   imports = [
     ./arr/radarr
     ./arr/sonarr
-    ./arr/seerr
     ./glance
     ./immich
     ./jellyfin
@@ -101,7 +97,6 @@
     ./sabnzbd
     ./slskd
     ./vaultwarden
-    ./vikunja
     ./vpn/headscale
     ./vpn/tailscale
   ];

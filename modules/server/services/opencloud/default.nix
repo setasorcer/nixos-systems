@@ -12,7 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "cloud.${server.baseDomain}";
+      default = "cloud.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -26,7 +26,7 @@ in
       address = "0.0.0.0";
       stateDir = "${server.dataDir}/files/cloud";
       port = cfg.port;
-      url = "https://${server.baseDomain}:${toString cfg.port}";
+      url = "https://${cfg.url}";
       environment = {
         PROXY_TLS = "false";
         OC_URL = "https://${cfg.url}";

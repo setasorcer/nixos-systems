@@ -14,11 +14,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port.dns = lib.mkOption {
       type = lib.types.int;
@@ -54,14 +50,16 @@ in
       ports = [ cfg.port.web ];
     };
     services.dnsmasq.settings = {
-      address = [ "/${server.internalDomain}/${server.localDomain}" ];
+      address = [
+        "/${server.publicDomain}/${server.localAddress}"
+      ];
     };
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port.web}
+        reverse_proxy localhost:${toString cfg.port.web}
       '';
     };
-    networking.firewall.allowedTCPPorts = [ cfg.port.dns cfg.port.web ];
+    networking.firewall.allowedTCPPorts = [ cfg.port.dns ];
     networking.firewall.allowedUDPPorts = [ cfg.port.dns ];
   };
 }

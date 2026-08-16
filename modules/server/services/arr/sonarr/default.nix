@@ -12,11 +12,7 @@ in
     };
     url = lib.mkOption {
       type = lib.types.str;
-      default = "${service}.${server.internalDomain}";
-    };
-    localUrl = lib.mkOption {
-      type = lib.types.str;
-      default = "${server.localDomain}:${toString cfg.port}";
+      default = "${service}.${server.publicDomain}";
     };
     port = lib.mkOption {
       type = lib.types.int;
@@ -26,13 +22,12 @@ in
   config = lib.mkIf cfg.enable {
     services.${service} = {
       enable = true;
-      openFirewall = true;
       settings.server.port = cfg.port;
     };
     users.users.${service}.extraGroups = [ "kyoka" "sabnzbd" ];
-    services.caddy.virtualHosts."http://${cfg.url}" = {
+    services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
-        reverse_proxy ${server.localDomain}:${toString cfg.port}
+        reverse_proxy localhost:${toString cfg.port}
       '';
     };
   };

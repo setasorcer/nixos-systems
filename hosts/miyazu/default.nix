@@ -28,9 +28,8 @@ in
   server = {
     enable = true;
     dns-refresh.enable = true;
-    baseDomain = "setasorcer.xyz";
-    internalDomain = "setasorcer.local";
-    localDomain = "192.168.0.9";
+    publicDomain = "sakujipalace.fyi";
+    localAddress = "192.168.0.9";
     dataDir = "/mnt/zichi";
 
     services = {
@@ -42,10 +41,6 @@ in
       sonarr = {
         enable = true;
         port = 8989;
-      };
-      seerr = {
-        enable = false;
-        port = 5055;
       };
       glance = {
         enable = true;
@@ -94,10 +89,6 @@ in
       vaultwarden = {
         enable = true;
         port = 8222;
-      };
-      vikunja = {
-        enable = false;
-        port = 3456;
       };
       headscale = {
         enable = true;
