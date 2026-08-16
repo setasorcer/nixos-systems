@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   programs.dank-material-shell = {
     plugins = {

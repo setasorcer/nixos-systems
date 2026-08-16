@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Disable some desktop entries to tidy up the launcher
   xdg.desktopEntries = {
