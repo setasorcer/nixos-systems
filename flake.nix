@@ -1,5 +1,5 @@
 {
-  description = "NixOS for Kyoko";
+  description = "NixOS, スイッチ！";
 
   # Cachix
   nixConfig = {
@@ -52,7 +52,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
   let
-    username = "kyoko";
+    username = "sakuji";
   in
   {
     nixosConfigurations = {

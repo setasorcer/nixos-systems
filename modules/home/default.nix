@@ -6,5 +6,5 @@
     ./xdg
   ];
 
-  home.file.".face".source = ./../../avatar.jpg;
+  home.file.".face".source = ./../../face.png;
 }

@@ -1,4 +1,4 @@
-# NixOS for Kyoko
+# NixOS, スイッチ！
 
 My personal NixOS deployment for my workstation, server, school laptop, and future systems. Farewell, Artix.
 
