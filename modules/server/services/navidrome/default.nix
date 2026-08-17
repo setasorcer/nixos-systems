@@ -56,6 +56,7 @@ in
         })
       ];
     };
+    systemd.services.navidrome.serviceConfig.BindReadOnlyPaths = [ "${server.dataDir}/media/ost" ];
     services.caddy.virtualHosts."${cfg.url}" = {
       extraConfig = ''
         reverse_proxy localhost:${toString cfg.port}

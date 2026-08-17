@@ -36,7 +36,7 @@
   sops.templates."ddns-config.json".owner = "ddns-updater";
   sops.templates."ddns-config.json".content = ''
     {
-     "settings": [
+      "settings": [
         {
           "provider": "porkbun",
           "domain": "${config.server.publicDomain}",
@@ -45,7 +45,13 @@
         },
         {
           "provider": "porkbun",
-          "domain": "navidrome.${config.server.publicDomain}",
+          "domain": "headscale.${config.server.publicDomain}",
+          "api_key": "${config.sops.placeholder.porkbun-token}",
+          "secret_api_key": "${config.sops.placeholder.porkbun-secret}"
+        },
+        {
+          "provider": "porkbun",
+          "domain": "jellyfin.${config.server.publicDomain}",
           "api_key": "${config.sops.placeholder.porkbun-token}",
           "secret_api_key": "${config.sops.placeholder.porkbun-secret}"
         },
@@ -57,7 +63,7 @@
         },
         {
           "provider": "porkbun",
-          "domain": "jellyfin.${config.server.publicDomain}",
+          "domain": "navidrome.${config.server.publicDomain}",
           "api_key": "${config.sops.placeholder.porkbun-token}",
           "secret_api_key": "${config.sops.placeholder.porkbun-secret}"
         }
