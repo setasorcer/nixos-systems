@@ -10,7 +10,6 @@
     ./sops
     ./swayimg
     ./foot
-    #./vesktop
     ./yazi
     ./zathura
     ./zen

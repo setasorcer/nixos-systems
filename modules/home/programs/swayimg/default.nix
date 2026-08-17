@@ -57,7 +57,7 @@ swayimg.viewer.set_text("topleft", {
   "File:\t{name}",
   "Format:\t{format}",
   "File size:\t{sizehr}",
-  "Image size:\t{meta.Exif.Photo.PixelXDimension}x{meta.Exif.Photo.PixelYDimension}"
+  "Image size:\t{frame.width}x{frame.height}"
 })
 -- top_right: index
 swayimg.viewer.set_text("topright", {
