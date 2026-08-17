@@ -22,12 +22,12 @@
     '';
 
     scripts = with pkgs.mpvScripts; [
-      modernx
+      uosc
       thumbfast
       #videoclip
       mpv-webm
       mpris
-      mpvacious
+      #mpvacious
     ];
     config = {
       hwdec = "vulkan";
@@ -44,6 +44,7 @@
         scalewindowed = "0.5";
         scalefullscreen = "0.5";
         windowcontrols = "no";
+        visibility = "never";
       };
       videoclip = {
         video_folder_path = "${config.home.homeDirectory}";
