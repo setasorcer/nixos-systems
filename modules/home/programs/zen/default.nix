@@ -41,7 +41,7 @@
     profiles.default = {
       search = {
         force = true;
-        default = "ddg";
+        default = "startpage";
         engines = {
           youtube = {
             name = "YouTube";
@@ -51,6 +51,15 @@
               }
             ];
             definedAliases = ["@yt"];
+          };
+          startpage = {
+            name = "Startpage";
+            urls = [
+              {
+                template = "https://www.startpage.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@st"];
           };
         };
       };

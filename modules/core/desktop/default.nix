@@ -31,12 +31,8 @@ in
     })
     (lib.mkIf cfg.niri.enable {
       desktop.defaultCompositor = "niri";
-      nixpkgs.overlays = [ inputs.niri-pkgs.overlays.niri ];
-      programs.niri = let
-        niriPkgs = inputs.niri-pkgs.packages.${pkgs.stdenv.hostPlatform.system};
-      in {
+      programs.niri = {
         enable = true;
-        package = niriPkgs.niri-unstable;
       };
     })
     (lib.mkIf cfg.niri.iio.enable {

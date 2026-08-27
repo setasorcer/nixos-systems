@@ -43,8 +43,8 @@
         ];
       };
       opener = {
-        extract = [{ run = ''ouch d -y "$@"''; desc = "Extract here with ouch"; }];
-        edit = [{ run = ''nvim "$@"''; block = true; }];
+        extract = [{ run = ''ouch d -y "%s"''; desc = "Extract here with ouch"; }];
+        edit = [{ run = ''$EDITOR "%s"''; block = true; }];
       };
       tasks = {
         image_bound = [ 10000 10000 ];
@@ -98,10 +98,11 @@
     };
     plugins = {
       ouch = pkgs.yaziPlugins.ouch;
-      yamb = ./yamb;
+      yamb = pkgs.yaziPlugins.yamb;
       parent-arrow = ./parent-arrow;
       jump-to-char = pkgs.yaziPlugins.jump-to-char;
-      relative-motions = pkgs.yaziPlugins.relative-motions;
+      #relative-motions = pkgs.yaziPlugins.relative-motions;
+      relative-motions = ./relative-motions;
       sshfs = pkgs.yaziPlugins.sshfs;
     };
   };

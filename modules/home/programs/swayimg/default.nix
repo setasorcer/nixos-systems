@@ -130,22 +130,22 @@ end)
 
 -- zoom to specific modes
 swayimg.viewer.on_key("w", function()
-  swayimg.viewer.scale = "width"
+  swayimg.viewer.set_fix_scale("width")
 end)
 swayimg.viewer.on_key("Shift+w", function()
-  swayimg.viewer.scale = "height"
+  swayimg.viewer.set_fix_scale("height")
 end)
 swayimg.viewer.on_key("z", function()
-  swayimg.viewer.scale = "fit"
+  swayimg.viewer.set_fix_scale("fit")
 end)
 swayimg.viewer.on_key("Shift+z", function()
-  swayimg.viewer.scale = "fill"
+  swayimg.viewer.set_fix_scale("fill")
 end)
 swayimg.viewer.on_key("0", function()
   swayimg.viewer.scale = 1.0
 end)
 swayimg.viewer.on_key("BackSpace", function()
-  swayimg.viewer.scale = "optimal"
+  swayimg.viewer.set_fix_scale("optimal")
 end)
 
 -- toggle keep_zoom
@@ -237,19 +237,19 @@ end)
 -- move image across the window
 swayimg.viewer.on_key("h", function()
   local pos = swayimg.viewer.get_position()
-  swayimg.viewer.set_abs_position(pos.x + 10, pos.y)
+  swayimg.viewer.set_abs_position(pos.x + 100, pos.y)
 end)
 swayimg.viewer.on_key("l", function()
   local pos = swayimg.viewer.get_position()
-  swayimg.viewer.set_abs_position(pos.x - 10, pos.y)
+  swayimg.viewer.set_abs_position(pos.x - 100, pos.y)
 end)
 swayimg.viewer.on_key("k", function()
   local pos = swayimg.viewer.get_position()
-  swayimg.viewer.set_abs_position(pos.x, pos.y + 10)
+  swayimg.viewer.set_abs_position(pos.x, pos.y + 100)
 end)
 swayimg.viewer.on_key("j", function()
   local pos = swayimg.viewer.get_position()
-  swayimg.viewer.set_abs_position(pos.x, pos.y - 10)
+  swayimg.viewer.set_abs_position(pos.x, pos.y - 100)
 end)
 
 -- move image across the window (mouse/touchpad)

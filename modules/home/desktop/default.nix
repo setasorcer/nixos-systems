@@ -15,7 +15,6 @@
       zen-browser.profileNames = [ "default" ];
       foot.enable = true;
       gtk.enable = true;
-      gtk.flatpakSupport.enable = true;
       nvf.enable = true;
       nvf.transparentBackground = true;
       yazi.enable = true;
