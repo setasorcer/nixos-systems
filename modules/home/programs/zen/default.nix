@@ -43,6 +43,15 @@
         force = true;
         default = "startpage";
         engines = {
+          startpage = {
+            name = "Startpage";
+            urls = [
+              {
+                template = "https://www.startpage.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@st"];
+          };
           youtube = {
             name = "YouTube";
             urls = [
