@@ -25,7 +25,7 @@
     Unit = { After = [ "dms.service" ]; };
     Service = {
       Type = "oneshot";
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 1";
       ExecStart = [ "${pkgs.coreutils}/bin/rmdir %h/pix/Screenshots" ];
     };
     Install.WantedBy = [ "graphical-session.target" ];
