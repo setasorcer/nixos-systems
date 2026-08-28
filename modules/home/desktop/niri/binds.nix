@@ -1,10 +1,3 @@
-{ pkgs, ... }:
-
-let
-  dms = cmd: [
-    "dms" "ipc" "call"
-  ] ++ (pkgs.lib.splitString " " cmd);
-in
 {
   wayland.windowManager.niri.settings.binds = {
     "Mod+Shift+Slash".show-hotkey-overlay = {};
@@ -17,65 +10,9 @@ in
       _props.repeat = false;
       spawn = [ "foot" "yazi" ];
     };
+
+    # Note: I have "Type to Launch" enabled in Noctalia, so opening the overview and typing something will automatically open the launcher.
     "Mod+D" = {
-      _props.repeat = false;
-      spawn = dms "spotlight toggle";
-    };
-    "Mod+BackSpace" = {
-      _props.repeat = false;
-      spawn = dms "powermenu toggle";
-    };
-    "Mod+Alt+L" = {
-      _props.repeat = false;
-      spawn = dms "lock lock";
-    };
-    "Mod+N" = {
-      _props.repeat = false;
-      spawn = dms "notifications open";
-    };
-    "Mod+Shift+N" = {
-      _props.repeat = false;
-      spawn = dms "notifications notifications dismissAllPopups";
-    };
-    "Mod+B" = {
-      _props.repeat = false;
-      spawn = dms "control-center toggle";
-    };
-
-    "XF86AudioRaiseVolume" = {
-      _props.allow-when-locked = true;
-      spawn = dms "audio increment 5";
-    };
-    "XF86AudioLowerVolume" = {
-      _props.allow-when-locked = true;
-      spawn = dms "audio decrement 5";
-    };
-    "XF86AudioMute" = {
-      _props.allow-when-locked = true;
-      spawn = dms "audio mute";
-    };
-    "XF86AudioMicMute" = {
-      _props.allow-when-locked = true;
-      spawn = dms "audio micmute";
-    };
-    "XF86MonBrightnessUp" = {
-      _props.allow-when-locked = true;
-      spawn = dms "brightness increment 5 backlight:intel_backlight";
-    };
-    "XF86MonBrightnessDown" = {
-      _props.allow-when-locked = true;
-      spawn = dms "brightness decrement 5 backlight:intel_backlight";
-    };
-    "XF86AudioPlay".spawn = dms "mpris playPause";
-    "XF86AudioStop".spawn = dms "mpris pause";
-    "XF86AudioPrev".spawn = dms "mpris previous";
-    "XF86AudioNext".spawn = dms "mpris next";
-    "Mod+Down".spawn = dms "mpris playPause";
-    "Mod+Up".spawn = dms "mpris pause";
-    "Mod+Left".spawn = dms "mpris previous";
-    "Mod+Right".spawn = dms "mpris next";
-
-    "Mod+O" = {
       _props.repeat = false;
       toggle-overview = {};
     };
@@ -173,7 +110,7 @@ in
     
     "Shift+Print".screenshot = {};
     "Print".screenshot-screen = {};
-    "Mod+Print".spawn = dms "screenRecorder toggleRecording";
+    #"Mod+Print".spawn = dms "screenRecorder toggleRecording";
     
     "Mod+Escape" = {
       _props.allow-inhibiting = false;

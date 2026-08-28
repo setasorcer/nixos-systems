@@ -23,7 +23,7 @@
   desktop = {
     enable = true;
     niri.enable = true;
-    greeter.dms.enable = true;
+    greeter.noctalia.enable = true;
     games = {
       steam.enable = true;
       prismlauncher.enable = true;

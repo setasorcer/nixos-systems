@@ -4,6 +4,7 @@
   imports = [ 
     ./binds.nix
     ./layout.nix
+    ./shell-binds.nix
   ];
   wayland.windowManager.niri = {
     enable = true;
@@ -74,8 +75,8 @@
         }
         {
           layer-rule._children = [
-            { match._props = { namespace = "^waybar$"; }; }
-            { background-effect._children = [ { blur = true; } { xray = false; } ]; }
+            { match._props = { namespace = "^noctalia-backdrop"; }; }
+            { place-within-backdrop = true; }
           ];
         }
       ];

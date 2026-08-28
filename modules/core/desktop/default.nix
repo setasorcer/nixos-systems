@@ -16,14 +16,14 @@ in
       iio.enable = lib.mkEnableOption "Enable the niri-iio program for convertible laptops";
     };
     greeter = {
-      dms.enable = lib.mkEnableOption "Enable the DankMaterialShell greeter from the DMS suite";
+      dms.enable = lib.mkEnableOption "Enable the DankMaterialShell greeter from the DankLinux suite";
+      noctalia.enable = lib.mkEnableOption "Enable the Noctalia greeter from the Noctalia suite";
     };
   };
 
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       environment.variables.NIXOS_OZONE_WL = "1"; # Attempts to force wayland on discord, fixes drag-and-drop
-      services.accounts-daemon.enable = true; # Save user avatar config, etc; required for DMS
       environment.systemPackages = with pkgs; [
         wl-clipboard
         wayland-utils
@@ -44,6 +44,15 @@ in
         compositor.name = cfg.defaultCompositor;
         configHome = "/home/${username}";
         package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      };
+    })
+    (lib.mkIf cfg.greeter.noctalia.enable {
+      services.displayManager.noctalia-greeter = {
+        enable = true;
+        cursorTheme = {
+          name = "BreezeX-RosePineDawn-Linux";
+          package = pkgs.rose-pine-cursor;
+        };
       };
     })
   ];

@@ -20,7 +20,7 @@
       enable = true;
       iio.enable = true;
     };
-    greeter.dms.enable = true;
+    greeter.noctalia.enable = true;
     games = {
       steam.enable = true;
       retroarch = {
