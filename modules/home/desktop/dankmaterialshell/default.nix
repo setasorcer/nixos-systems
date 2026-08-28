@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -21,4 +21,13 @@
   };
   programs.dsearch.enable = true;
 
+  systemd.user.services.remove-directory = {
+    Unit = { After = [ "dms.service" ]; };
+    Service = {
+      Type = "oneshot";
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+      ExecStart = [ "${pkgs.coreutils}/bin/rmdir %h/pix/Screenshots" ];
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
 }
