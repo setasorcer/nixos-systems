@@ -26,7 +26,7 @@
       backdrop.enabled = true;
       brightness.minimum_brightness = 0.01;
       nightlight.enabled = true;
-      notifications = {
+      notification = {
         history_retention_hours = 72;
         position = "top_center";
       };
