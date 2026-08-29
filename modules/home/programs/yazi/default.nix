@@ -44,7 +44,7 @@
       };
       opener = {
         extract = [{ run = ''ouch d -y "%s"''; desc = "Extract here with ouch"; }];
-        edit = [{ run = ''$EDITOR "%s"''; block = true; }];
+        edit = [{ run = "$EDITOR %s"; block = true; }];
       };
       tasks = {
         image_bound = [ 10000 10000 ];

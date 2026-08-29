@@ -7,6 +7,15 @@
       icon = "fcitx";
       settings.NoDisplay = "true";
     };
+    "org.pwmt.zathura-cb" = {
+      name = "Zathura";
+      exec = "zathura %U";
+      icon = "org.pwmt.zathura";
+      settings.NoDisplay = "true";
+      terminal = false;
+      type = "Application";
+      mimeType = [ "application/x-cbr" "application/x-rar" "application/x-cbz" "application/zip" "application/x-cb7" "application/x-7z-compressed" "application/x-cbt" "application/x-tar"];
+    };
     "org.gnome.Nautilus" = {
       name = "Files";
       exec = "nautilus --new-window";
