@@ -35,10 +35,53 @@
         position_vertical = "bottom_center";
       };
       shell = {
+        launcher.show_app_actions = true;
         animation.speed = 1.5;
         panel.launcher_placement = "attached";
         launch_apps_as_systemd_services = true;
         niri_overview_type_to_launch_enabled = true;
+        session = {
+          grid = true;
+          grid_columns = 1;
+          actions = [
+            {
+              action = "lock";
+              countdown_seconds = 0;
+              enabled = true;
+              shortcut = "l";
+              variant = "default";
+            }
+            {
+              action = "logout";
+              countdown_seconds = 0;
+              enabled = true;
+              shortcut = "x";
+              variant = "default";
+            }
+            {
+              action = "lock_and_suspend";
+              countdown_seconds = 1;
+              enabled = true;
+              label = "Suspend";
+              shortcut = "s";
+              variant = "default";
+            }
+            {
+              action = "reboot";
+              countdown_seconds = 1;
+              enabled = true;
+              shortcut = "r";
+              variant = "default";
+            }
+            {
+              action = "shutdown";
+              countdown_seconds = 1;
+              enabled = true;
+              shortcut = "p";
+              variant = "destructive";
+            }
+          ];
+        };
       };
       theme.templates = {
         enable_builtin_templates = false;

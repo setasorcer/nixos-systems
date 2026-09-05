@@ -16,6 +16,7 @@
 
   desktop = {
     enable = true;
+    laptopPPDCycle.enable = true;
     niri = {
       enable = true;
       iio.enable = true;

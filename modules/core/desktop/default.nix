@@ -19,6 +19,7 @@ in
       dms.enable = lib.mkEnableOption "Enable the DankMaterialShell greeter from the DankLinux suite";
       noctalia.enable = lib.mkEnableOption "Enable the Noctalia greeter from the Noctalia suite";
     };
+    laptopPPDCycle.enable = lib.mkEnableOption "Create udev rule to automatically switch power profiles based on whether the laptop is charging or not";
   };
 
   config = lib.mkMerge [
@@ -54,6 +55,12 @@ in
           package = pkgs.rose-pine-cursor;
         };
       };
+    })
+    (lib.mkIf cfg.laptopPPDCycle.enable {
+      services.udev.extraRules = ''
+        SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="0", ACTION=="change", RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver"
+        SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="1", ACTION=="change", RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set balanced"
+      '';
     })
   ];
 

@@ -2,15 +2,13 @@
 
 My personal NixOS deployment for my workstation, server, school laptop, and future systems. Farewell, Artix.
 
-Now in DankMaterialShell flavour!
+Now in Noctalia v5 flavour!
 
 ## Main Features
 
 ### Itsuku/Teppei
 
-- Niri (window manager)
-- Dank Material Shell (desktop shell)
-- dms-greeter (login page)
+- Plymouth for quiet, clean boot
 - Stylix (uses [Mountain colourscheme](https://github.com/mountain-theme/Mountain/))
 - [NVF config](https://github.com/NotAShelf/nvf), by NotAShelf
 - Wallpaper by susudust
@@ -18,19 +16,23 @@ Now in DankMaterialShell flavour!
 Along with a bunch of other programs and preconfigured settings!
 
 ```
+niri
+noctalia
 anki
 btop
+fish
 foot
-jellyfin-tui (jellyfin music player)
 mpv
+prismlauncher
 qemu
 retroarch
 steam
-swayimg (image viewer)
+swayimg
 vesktop
-yazi (file manager)
-zathura (pdf viewer)
-zen-beta (web browser)
+waydroid
+yazi
+zathura
+zen-beta
 ```
 
 Itsuku and Teppei are used on my main workstation computers (A Framework 16 and ThinkPad T480 respectively). This is made with integration to my server in mind, hence the use of jellyfin-tui.
@@ -38,14 +40,27 @@ Itsuku and Teppei are used on my main workstation computers (A Framework 16 and 
 ### Miyazu
 
 - ZFS (filesystem)
-- QuickSync support
-- SSH with anti intrusion tools (endlessh, fail2ban) (Known issue: intrusion tools do practically nothing, although ssh is local only)
-- *arr for automating media organization
-- Jellyfin for accessing movies, music, books, and TV shows
-- Immich for storing personal photos
-- Audiobookshelf and Komga for viewing/listening to books and manga
-- Filebrowser for simple file uploading/sharing
-- Deluge/Sabnzbd/Slskd for downloading Linux ISOs
+- SSH for remote access
+- ACME for creating valid local HTTPS certs
+  - DDNS Updater to sync public IP with DNS record
+
+Along with various homelab services:
+
+```
+jellyfin
+lanraragi
+navidrome
+memos
+opencloud
+immich
+radicale
+vaultwarden
+radarr
+sonarr
+sabnzbd
+slskd
+pi-hole
+```
 
 Miyazu is used on my main home server. Currently I'm just learning the hoops of making a server, and since I already know Nix, I thought it would be nice to try. So far I've been having a lot of fun and headaches, but mostly fun. Up until this point I've been storing everything locally on my workstation machines, so it's nice to have something dedicated to storing your data **somewhat** reliably. (somewhat meaning it entirely depends on the person maintaining the server)
 

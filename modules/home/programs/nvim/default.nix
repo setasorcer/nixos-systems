@@ -20,23 +20,36 @@
       ];
 
       statusline.lualine.enable = true;
-      telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
-      ui.colorizer = {
-        enable = true;
-        setupOpts = {
-          filetypes = {
-            "*" = { };
+      binds.whichKey.enable = true;
+
+      autopairs.nvim-autopairs.enable = true;
+      notes.todo-comments.enable = true;
+      utility = {
+        surround.enable = true;
+      };
+      ui = {
+        colorizer = {
+          enable = true;
+          setupOpts = {
+            filetypes = {
+              "*" = { };
+            };
           };
         };
+        noice.enable = true;
       };
+      visuals.indent-blankline.enable = true;
 
       lsp.enable = true;
-      lsp.servers.nixd.settings.nil.nix.autoArchive = false;
       languages = {
         enableTreesitter = true;
 
         nix.enable = true;
+        markdown = {
+          enable = true;
+          extensions.render-markdown-nvim.enable = true;
+        };
       };
     };
   };

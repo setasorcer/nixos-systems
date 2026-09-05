@@ -22,6 +22,7 @@
 
   desktop = {
     enable = true;
+    laptopPPDCycle.enable = true;
     niri.enable = true;
     greeter.noctalia.enable = true;
     games = {
