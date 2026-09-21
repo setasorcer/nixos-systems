@@ -91,11 +91,11 @@ in
         port = 8222;
       };
       headscale = {
-        enable = true;
+        enable = false;
         port = 8085;
       };
       tailscale = {
-        enable = true;
+        enable = false;
         port = 41641;
       };
     };
