@@ -29,6 +29,8 @@ in
         Plugins.Enabled = true;
         EnableInsightsCollector = false;
         LyricsPriority = ".ttml,.yaml,.yml,.elrc,.srt,nd-lyrics,embedded,.lrc,.txt";
+
+        Jellyfin.Enabled = true;
       };
 
       plugins = with pkgs.navidromePlugins; [
