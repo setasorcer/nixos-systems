@@ -1,19 +1,18 @@
 { config, pkgs, ... }:
 
 {
-  sops.secrets."jellyfin-tui-password" = {};
+  sops.secrets = {
+    "jellyfin-tui-password" = {};
+  };
   home.packages = [ pkgs.jellyfin-tui ];
   home.file.".config/jellyfin-tui/config.yaml".text = ''
     servers:
-      - name: Server
+      - name: Home Server
         password_file: ${config.sops.secrets.jellyfin-tui-password.path}
-        url: https://jellyfin.setasorcer.xyz
-        username: hori
+        url: https://navidrome.sakujipalace.fyi/jellyfin
+        username: kanrisha
     mpv:
         replaygain: "album"
-    discord: 1053747938519679018
-    discord_art: "local"
-    discord_status: "state"
 
   '';
 }
