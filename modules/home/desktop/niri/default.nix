@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [ 
@@ -9,6 +9,7 @@
   wayland.windowManager.niri = {
     enable = true;
     systemd.enable = true;
+    xwaylandSatellitePackage = inputs.xwayland-satellite.packages.${pkgs.system}.xwayland-satellite;
 
     settings = {
       input = {

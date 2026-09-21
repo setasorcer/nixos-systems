@@ -5,6 +5,7 @@
     ./btop
     ./git
     ./gpg
+    ./jellyfin-tui
     ./mpv
     ./nvim
     ./sops
