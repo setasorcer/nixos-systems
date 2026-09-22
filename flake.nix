@@ -19,6 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     stylix.url = "github:danth/stylix";
     zen-browser = {

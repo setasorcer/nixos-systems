@@ -21,6 +21,7 @@
       enable = true;
       iio.enable = true;
     };
+    mango.enable = true;
     greeter.noctalia.enable = true;
     games = {
       steam.enable = true;

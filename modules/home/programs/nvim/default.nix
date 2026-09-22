@@ -19,6 +19,10 @@
         }
       ];
 
+      spellcheck = {
+        enable = true;
+        programmingWordlist.enable = true;
+      };
       statusline.lualine.enable = true;
       autocomplete.nvim-cmp.enable = true;
       binds.whichKey.enable = true;
