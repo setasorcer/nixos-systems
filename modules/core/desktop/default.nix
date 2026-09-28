@@ -40,7 +40,16 @@ in
       };
     })
     (lib.mkIf cfg.niri.iio.enable {
-      services.iio-niri.enable = true;
+      services.iio-niri = {
+        enable = true;
+        extraArgs = [
+          "--transform"
+          "normal"
+          "keep"
+          "180"
+          "keep"
+        ];
+      };
     })
     (lib.mkIf cfg.greeter.dms.enable {
       services.displayManager.dms-greeter = {
