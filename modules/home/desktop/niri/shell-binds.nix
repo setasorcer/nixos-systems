@@ -56,5 +56,9 @@ in
     "Mod+Up".spawn = noctalia "media stop";
     "Mod+Left".spawn = noctalia "media previous";
     "Mod+Right".spawn = noctalia "media next";
+
+    "Print".spawn = noctalia "screenshot-fullscreen";
+    "Shift+Print".spawn = noctalia "screenshot-annotate";
+    "Alt+Print".spawn = noctalia "screenshot-region";
   };
 }

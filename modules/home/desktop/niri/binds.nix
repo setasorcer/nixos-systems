@@ -108,10 +108,6 @@
     
     "Mod+W".toggle-column-tabbed-display = {};
     
-    "Shift+Print".screenshot = {};
-    "Print".screenshot-screen = {};
-    #"Mod+Print".spawn = dms "screenRecorder toggleRecording";
-    
     "Mod+Escape" = {
       _props.allow-inhibiting = false;
       toggle-keyboard-shortcuts-inhibit = {};

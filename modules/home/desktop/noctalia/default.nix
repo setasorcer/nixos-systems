@@ -40,6 +40,11 @@
         panel.launcher_placement = "attached";
         launch_apps_as_systemd_services = true;
         niri_overview_type_to_launch_enabled = true;
+        screenshot = {
+          confirm_region = true;
+          directory = "${config.xdg.userDirs.pictures}/snaps";
+          filename_pattern = "%Y-%m-%d-%H%M%S";
+        };
         session = {
           grid = true;
           grid_columns = 1;

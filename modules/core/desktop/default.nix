@@ -18,6 +18,9 @@ in
     mango = {
       enable = lib.mkEnableOption "Enable the mango compositor";
     };
+    umbriel = {
+      enable = lib.mkEnableOption "Enable the umbriel compositor";
+    };
     greeter = {
       dms.enable = lib.mkEnableOption "Enable the DankMaterialShell greeter from the DankLinux suite";
       noctalia.enable = lib.mkEnableOption "Enable the Noctalia greeter from the Noctalia suite";
@@ -32,6 +35,12 @@ in
         wl-clipboard
         wayland-utils
       ];
+    })
+    (lib.mkIf cfg.umbriel.enable {
+      desktop.defaultCompositor = "umbriel";
+      programs.umbriel = {
+        enable = true;
+      };
     })
     (lib.mkIf cfg.niri.enable {
       desktop.defaultCompositor = "niri";
