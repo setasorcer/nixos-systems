@@ -15,14 +15,10 @@ in
       enable = lib.mkEnableOption "Enable the niri compositor";
       iio.enable = lib.mkEnableOption "Enable the niri-iio program for convertible laptops";
     };
-    mango = {
-      enable = lib.mkEnableOption "Enable the mango compositor";
-    };
     umbriel = {
       enable = lib.mkEnableOption "Enable the umbriel compositor";
     };
     greeter = {
-      dms.enable = lib.mkEnableOption "Enable the DankMaterialShell greeter from the DankLinux suite";
       noctalia.enable = lib.mkEnableOption "Enable the Noctalia greeter from the Noctalia suite";
     };
     laptopPPDCycle.enable = lib.mkEnableOption "Create udev rule to automatically switch power profiles based on whether the laptop is charging or not";
@@ -58,20 +54,6 @@ in
           "180"
           "keep"
         ];
-      };
-    })
-    (lib.mkIf cfg.greeter.dms.enable {
-      services.displayManager.dms-greeter = {
-        enable = true;
-        compositor.name = cfg.defaultCompositor;
-        configHome = "/home/${username}";
-        package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      };
-    })
-    (lib.mkIf cfg.mango.enable {
-      desktop.defaultCompositor = "mango";
-      programs.mango = {
-        enable = true;
       };
     })
     (lib.mkIf cfg.greeter.noctalia.enable {

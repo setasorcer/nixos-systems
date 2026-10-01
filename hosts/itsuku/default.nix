@@ -24,7 +24,6 @@
     enable = true;
     laptopPPDCycle.enable = true;
     niri.enable = true;
-    mango.enable = true;
     greeter.noctalia.enable = true;
     games = {
       steam.enable = true;

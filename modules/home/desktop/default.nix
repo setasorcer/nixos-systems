@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./mango
     ./niri
     ./noctalia
   ];
