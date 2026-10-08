@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ inputs, pkgs, config, lib, ... }:
 
 let
   cfg = config.desktop.games;
@@ -25,6 +25,7 @@ in
   config = lib.mkMerge [
     (lib.mkIf cfg.steam.enable {
       nixpkgs.overlays = [
+        inputs.millennium.overlays.default
         (final: prev: {
           steam = prev.steam.override {
             extraArgs = "-cef-disable-gpu-compositing";
@@ -33,10 +34,10 @@ in
       ];
       programs.steam = {
         enable = true;
+        package = pkgs.millennium-steam;
         remotePlay.openFirewall = true;
         dedicatedServer.openFirewall = true;
         localNetworkGameTransfers.openFirewall = true;
-        #gamescopeSession.enable = true;
         protontricks.enable = true;
         extraPackages = with pkgs; [ hidapi ];
       };

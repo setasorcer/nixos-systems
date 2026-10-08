@@ -39,7 +39,6 @@
     pulsemixer
 
     # Misc
-    sgdboop
     vesktop
   ];
 }
