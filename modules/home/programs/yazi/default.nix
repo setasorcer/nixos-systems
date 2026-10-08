@@ -106,4 +106,5 @@
       sshfs = pkgs.yaziPlugins.sshfs;
     };
   };
+  stylix.targets.yazi.enable = true;
 }

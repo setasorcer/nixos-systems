@@ -9,16 +9,8 @@
 
   stylix = {
     targets = {
-      btop.enable = true;
-      noctalia.enable = true;
       fcitx5.enable = true;
-      zen-browser.enable = true;
-      zen-browser.profileNames = [ "default" ];
-      foot.enable = true;
       gtk.enable = true;
-      nvf.enable = true;
-      nvf.transparentBackground = true;
-      yazi.enable = true;
     };
     icons = {
       enable = true;

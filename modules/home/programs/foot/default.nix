@@ -94,4 +94,5 @@
     };
   };
   home.sessionVariables.TERMINAL = "footclient";
+  stylix.targets.foot.enable = true;
 }

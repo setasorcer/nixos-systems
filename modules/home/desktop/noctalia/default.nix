@@ -103,4 +103,5 @@
       };
     };
   };
+  stylix.targets.noctalia.enable = true;
 }

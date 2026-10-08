@@ -58,4 +58,8 @@
     };
   };
   home.sessionVariables.EDITOR = "nvim";
+  stylix.targets.nvf = {
+    enable = true;
+    transparentBackground = true;
+  };
 }
