@@ -19,7 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     stylix.url = "github:danth/stylix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
