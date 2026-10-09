@@ -26,6 +26,28 @@
       backdrop.enabled = true;
       brightness.minimum_brightness = 0.01;
       nightlight.enabled = true;
+      idle = {
+        behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
+        pre_action_fade_seconds = 5;
+        behavior = {
+          "lock" = {
+            action = "lock";
+            enabled = false;
+            timeout = 600;
+          };
+          "lock-and-suspend" = {
+            action = "lock_and_suspend";
+            enabled = false;
+            timeout = 900;
+          };
+          "screen-off" = {
+            action = "screen_off";
+            enabled = true;
+            locked_timeout = 1;
+            timeout = 300;
+          };
+        };
+      };
       notification = {
         history_retention_hours = 72;
         position = "top_center";
