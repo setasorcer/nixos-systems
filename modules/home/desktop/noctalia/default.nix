@@ -121,7 +121,10 @@
         network.show_label = false;
         notifications.hide_when_no_unread = true;
         privacy.hide_inactive = true;
-        workspaces.show_labels = false;
+        workspaces = {
+          show_labels = false;
+          show_tooltip = false;
+        };
       };
     };
   };
