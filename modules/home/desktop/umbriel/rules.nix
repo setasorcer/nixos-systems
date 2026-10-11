@@ -52,5 +52,12 @@
     match.app_id = "^music$"
     default_scratchpad = "music"
     default_floating_size = { width = 0.5, height = 0.6 }
+
+    [[layer_rule]]
+    match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
+    blur = true
+    blur_ignore_alpha = 0.5
+    blur_popups = true
+    blur_optimized = false
   '';
 }
