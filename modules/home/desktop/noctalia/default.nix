@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   programs.noctalia = {
@@ -6,6 +6,10 @@
     systemd.enable = true;
 
     settings = {
+      theme = {
+        community_palette = "Kanagawa Dragon";
+        source = lib.mkForce "community";
+      };
       bar."default" = {
         position = "left";
         scale = 1.1;

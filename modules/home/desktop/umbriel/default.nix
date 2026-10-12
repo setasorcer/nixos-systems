@@ -2,7 +2,6 @@
   imports = [
     ./binds.nix
     ./colors.nix
-    ./general.nix
     ./rules.nix
   ];
 

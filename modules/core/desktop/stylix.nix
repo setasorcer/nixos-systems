@@ -10,7 +10,7 @@
       fish.enable = true;
       gtk.enable = true;
     };
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/mountain.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa-dragon.yaml";
     image = lib.mkDefault ./../../../papes/pape.jpg;
     polarity = "dark";
     # Waybar

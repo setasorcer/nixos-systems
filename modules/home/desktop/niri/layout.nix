@@ -25,7 +25,7 @@
 
       focus-ring = {
         width = 4;
-        active-color = "${config.lib.stylix.colors.withHashtag.base0D}";
+        active-color = "${config.lib.stylix.colors.withHashtag.base0B}";
         inactive-color = "${config.lib.stylix.colors.withHashtag.base00}";
       };
 

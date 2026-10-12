@@ -24,6 +24,7 @@
     enable = true;
     laptopPPDCycle.enable = true;
     niri.enable = true;
+    umbriel.enable = true;
     greeter.noctalia.enable = true;
     games = {
       steam.enable = true;
