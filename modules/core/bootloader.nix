@@ -4,7 +4,6 @@
   # Bootloader.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    initrd.systemd.enable = true;
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
@@ -16,16 +15,11 @@
       enable = true;
       theme = "bgrt";
     };
-    consoleLogLevel = 0;
-    initrd.verbose = false;
+    consoleLogLevel = 3;
     kernelParams = [
       "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
-      "udev.log_priority=3"
     ];
   };
   # Don't wait for network on startup
