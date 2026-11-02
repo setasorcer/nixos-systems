@@ -29,6 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    anime-games-launcher.url = "github:an-anime-team/anime-games-launcher";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 

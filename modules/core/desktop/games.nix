@@ -4,8 +4,12 @@ let
   cfg = config.desktop.games;
 in
 {
+  imports = [
+    inputs.anime-games-launcher.nixosModules.anime-games-launcher
+  ];
   options.desktop = {
     games = {
+      agl.enable = lib.mkEnableOption "Enable anime games launcher";
       steam.enable = lib.mkEnableOption "Enable installation of Steam and other related utilities";
       prismlauncher.enable = lib.mkEnableOption "Enable Prism Launcher, a Minecraft launcher";
       retroarch = {
@@ -39,7 +43,7 @@ in
         dedicatedServer.openFirewall = true;
         localNetworkGameTransfers.openFirewall = true;
         protontricks.enable = true;
-        extraPackages = with pkgs; [ hidapi ];
+        extraPackages = with pkgs; [ hidapi mono ];
       };
       programs.gamescope = {
         enable = true;
@@ -54,6 +58,14 @@ in
     })
     (lib.mkIf cfg.prismlauncher.enable {
       environment.systemPackages = [ pkgs.prismlauncher ];
+    })
+    (lib.mkIf cfg.agl.enable {
+      programs.anime-games-launcher = {
+        enable = true;
+      };
+      environment.systemPackages = with pkgs; [
+        python3
+      ];
     })
   ];
 }

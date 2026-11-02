@@ -27,6 +27,7 @@
     umbriel.enable = true;
     greeter.noctalia.enable = true;
     games = {
+      agl.enable = true;
       steam.enable = true;
       prismlauncher.enable = true;
       retroarch = {
