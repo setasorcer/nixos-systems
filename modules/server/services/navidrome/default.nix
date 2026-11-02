@@ -30,19 +30,18 @@ in
         EnableInsightsCollector = false;
         LyricsPriority = ".ttml,.yaml,.yml,.elrc,.srt,nd-lyrics,embedded,.lrc,.txt";
 
+        EnableStarRating = false;
         Jellyfin.Enabled = true;
       };
 
       plugins = with pkgs.navidromePlugins; [
-        audiomuseai
-        discord-rich-presence
         (pkgs.stdenv.mkDerivation rec {
           pname = "nd-lyrics";
-          version = "7.2.0";
+          version = "8.1.0";
 
           src = pkgs.fetchurl {
-            url = "https://github.com/J0R6IT0/navidrome-lyrics-plugin/releases/download/v7.2.0/nd-lyrics.ndp";
-            hash = "sha256-qRluW04sLrKqzLnzXJ+vb0iP6Qgf9WhbFVaQFobHVA8=";
+            url = "https://github.com/J0R6IT0/navidrome-lyrics-plugin/releases/download/v8.1.0/nd-lyrics.ndp";
+            hash = "sha256-Kd1XG6DUu3VuYsDVxZSi1+fJzOwpUPOwJ71kxzxgVxU=";
           };
 
           dontUnpack = true;
