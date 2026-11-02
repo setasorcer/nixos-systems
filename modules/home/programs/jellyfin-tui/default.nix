@@ -10,7 +10,7 @@
       - name: Home Server
         password_file: ${config.sops.secrets.jellyfin-tui-password.path}
         url: https://jellyfin.sakujipalace.fyi
-        username: kanrisha
+        username: sakuji
     mpv:
         replaygain: "album"
 
